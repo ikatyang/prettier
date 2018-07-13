@@ -129,14 +129,16 @@ function willBreak(doc) {
   return findInDoc(
     doc,
     doc => {
-      if (doc.type === "group" && doc.break) {
-        return true;
-      }
-      if (doc.type === "line" && doc.hard) {
-        return true;
-      }
-      if (doc.type === "break-parent") {
-        return true;
+      if (typeof doc !== "string") {
+        if (doc.type === "group" && doc.break) {
+          return true;
+        }
+        if (doc.type === "line" && doc.hard) {
+          return true;
+        }
+        if (doc.type === "break-parent") {
+          return true;
+        }
       }
     },
     false
@@ -168,19 +170,21 @@ function propagateBreaks(doc) {
   traverseDoc(
     doc,
     doc => {
-      if (doc.type === "break-parent") {
-        breakParentGroup(groupStack);
-      }
-      if (doc.type === "group") {
-        groupStack.push(doc);
-        if (alreadyVisited.has(doc)) {
-          return false;
+      if (typeof doc !== "string") {
+        if (doc.type === "break-parent") {
+          breakParentGroup(groupStack);
         }
-        alreadyVisited.set(doc, true);
+        if (doc.type === "group") {
+          groupStack.push(doc);
+          if (alreadyVisited.has(doc)) {
+            return false;
+          }
+          alreadyVisited.set(doc, true);
+        }
       }
     },
     doc => {
-      if (doc.type === "group") {
+      if (typeof doc !== "string" && doc.type === "group") {
         const group = /** @type {Group} */ (groupStack.pop());
         if (group.break) {
           breakParentGroup(groupStack);
@@ -201,10 +205,12 @@ function removeLines(doc) {
   // should still output because there's too great of a chance
   // of breaking existing assumptions otherwise.
   return mapDoc(doc, d => {
-    if (d.type === "line" && !d.hard) {
-      return d.soft ? "" : " ";
-    } else if (d.type === "if-break") {
-      return d.flatContents || "";
+    if (typeof d !== "string") {
+      if (d.type === "line" && !d.hard) {
+        return d.soft ? "" : " ";
+      } else if (d.type === "if-break") {
+        return d.flatContents || "";
+      }
     }
     return d;
   });
@@ -216,16 +222,25 @@ function removeLines(doc) {
  */
 function stripTrailingHardline(doc) {
   // HACK remove ending hardline, original PR: #1984
-  if (doc.type === "concat" && doc.parts.length === 2) {
-    const lastPart = doc.parts[1];
-    if (lastPart.type === "concat" && lastPart.parts.length === 2) {
-      const firstPartInLastPart = lastPart.parts[0];
+  if (typeof doc !== "string") {
+    if (doc.type === "concat" && doc.parts.length === 2) {
+      const lastPart = doc.parts[1];
       if (
-        firstPartInLastPart.type === "line" &&
-        firstPartInLastPart.hard &&
-        lastPart.parts[1].type === "break-parent"
+        typeof lastPart !== "string" &&
+        lastPart.type === "concat" &&
+        lastPart.parts.length === 2
       ) {
-        return doc.parts[0];
+        const firstPartInLastPart = lastPart.parts[0];
+        const lastPartInLastPart = lastPart.parts[1];
+        if (
+          typeof firstPartInLastPart !== "string" &&
+          firstPartInLastPart.type === "line" &&
+          firstPartInLastPart.hard &&
+          typeof lastPartInLastPart !== "string" &&
+          lastPartInLastPart.type === "break-parent"
+        ) {
+          return doc.parts[0];
+        }
       }
     }
   }

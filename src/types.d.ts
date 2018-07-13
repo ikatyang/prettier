@@ -1,5 +1,5 @@
 type Doc =
-  | string & { type?: undefined }
+  | string
   | Align
   | BreakParent
   | Concat
