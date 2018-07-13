@@ -1,13 +1,22 @@
 "use strict";
 
+/**
+ * @param {Doc} doc
+ * @returns {Doc}
+ */
 function flattenDoc(doc) {
+  if (typeof doc === "string") {
+    return doc;
+  }
+
   if (doc.type === "concat") {
     const res = [];
 
     for (let i = 0; i < doc.parts.length; ++i) {
       const doc2 = doc.parts[i];
       if (typeof doc2 !== "string" && doc2.type === "concat") {
-        [].push.apply(res, flattenDoc(doc2).parts);
+        const flattened = /** @type {Concat} */ (flattenDoc(doc2));
+        Array.prototype.push.apply(res, flattened.parts);
       } else {
         const flattened = flattenDoc(doc2);
         if (flattened !== "") {
@@ -31,19 +40,23 @@ function flattenDoc(doc) {
         ? doc.expandedStates.map(flattenDoc)
         : doc.expandedStates
     });
-  } else if (doc.contents) {
+  } else if ("contents" in doc) {
     return Object.assign({}, doc, { contents: flattenDoc(doc.contents) });
   }
   return doc;
 }
 
+/**
+ * @param {Doc} doc
+ * @returns {string}
+ */
 function printDoc(doc) {
   if (typeof doc === "string") {
     return JSON.stringify(doc);
   }
 
   if (doc.type === "line") {
-    if (doc.literalline) {
+    if (doc.literal) {
       return "literalline";
     }
     if (doc.hard) {
@@ -72,7 +85,7 @@ function printDoc(doc) {
       ? "dedentToRoot(" + printDoc(doc.contents) + ")"
       : doc.n < 0
         ? "dedent(" + printDoc(doc.contents) + ")"
-        : doc.n.type === "root"
+        : typeof doc.n === "object" && doc.n.type === "root"
           ? "markAsRoot(" + printDoc(doc.contents) + ")"
           : "align(" +
             JSON.stringify(doc.n) +
@@ -124,6 +137,9 @@ function printDoc(doc) {
 }
 
 module.exports = {
+  /**
+   * @param {Doc} doc
+   */
   printDocToDebug: function(doc) {
     return printDoc(flattenDoc(doc));
   }

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "lib": ["es6"]
+  },
+  "include": ["src/doc/**/*.js", "src/types.d.ts", "src/common/fast-path.js"]
+}

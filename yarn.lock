@@ -569,6 +569,14 @@
   dependencies:
     commander "*"
 
+"@types/emoji-regex@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/emoji-regex/-/emoji-regex-7.0.0.tgz#c06c861c27b4094fdc7f54f9abe80f56d82da397"
+
+"@types/escape-string-regexp@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/escape-string-regexp/-/escape-string-regexp-0.0.32.tgz#296005808f51d27fb2a2de8d1ca080a91ee3375c"
+
 "@types/node@*":
   version "8.0.47"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.47.tgz#968e596f91acd59069054558a00708c445ca30c2"
@@ -576,6 +584,10 @@
 "@types/semver@^5.4.0":
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-5.5.0.tgz#146c2a29ee7d3bae4bf2fcb274636e264c813c45"
+
+"@types/string-width@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/string-width/-/string-width-2.0.0.tgz#89fa716e150360b071b4edb497f01a0a9a4be6ca"
 
 abab@^1.0.4:
   version "1.0.4"
@@ -1811,9 +1823,9 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-emoji-regex@6.5.1:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.5.1.tgz#9baea929b155565c11ea41c6626eaa65cef992c2"
+emoji-regex@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.0.tgz#7c25d9bb46480f9a5a80ab6a2a12935bdde6cb6c"
 
 emojis-list@^2.0.0:
   version "2.1.0"

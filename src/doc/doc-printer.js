@@ -3,20 +3,46 @@
 const { getStringWidth } = require("../common/util");
 const { concat, fill, cursor } = require("./doc-builders");
 
-/** @type {{[groupId: PropertyKey]: MODE}} */
-let groupModeMap;
-
+/**
+ * @typedef {[Indentation, Mode, Doc]} Command
+ *
+ * @typedef {Object} Indentation
+ * @property {string} value
+ * @property {number} length
+ * @property {IndentationPart[]} queue
+ * @property {Indentation=} root
+ *
+ * @typedef {{ type: "indent" | "dedent" } | { type: "numberAlign", n: number } | { type: "stringAlign", n: string }} IndentationPart
+ *
+ * @typedef {1 | 2} Mode
+ */
 const MODE_BREAK = 1;
 const MODE_FLAT = 2;
 
+/** @type {Record<PropertyKey, Mode>} */
+let groupModeMap;
+
+/**
+ * @returns {Indentation}
+ */
 function rootIndent() {
   return { value: "", length: 0, queue: [] };
 }
 
+/**
+ * @param {Indentation} ind
+ * @param {PrinterOptions} options
+ * @returns {Indentation}
+ */
 function makeIndent(ind, options) {
   return generateInd(ind, { type: "indent" }, options);
 }
 
+/**
+ * @param {Indentation} ind
+ * @param {number | string | { type: "root" }} n
+ * @param {PrinterOptions} options
+ */
 function makeAlign(ind, n, options) {
   return n === -Infinity
     ? ind.root || rootIndent()
@@ -24,13 +50,19 @@ function makeAlign(ind, n, options) {
       ? generateInd(ind, { type: "dedent" }, options)
       : !n
         ? ind
-        : n.type === "root"
-          ? Object.assign({}, ind, { root: ind })
+        : typeof n === "number"
+          ? generateInd(ind, { type: "numberAlign", n }, options)
           : typeof n === "string"
             ? generateInd(ind, { type: "stringAlign", n }, options)
-            : generateInd(ind, { type: "numberAlign", n }, options);
+            : Object.assign({}, ind, { root: ind });
 }
 
+/**
+ * @param {Indentation} ind
+ * @param {IndentationPart} newPart
+ * @param {PrinterOptions} options
+ * @returns {Indentation}
+ */
 function generateInd(ind, newPart, options) {
   const queue =
     newPart.type === "dedent"
@@ -71,11 +103,17 @@ function generateInd(ind, newPart, options) {
 
   return Object.assign({}, ind, { value, length, queue });
 
+  /**
+   * @param {number} count
+   */
   function addTabs(count) {
     value += "\t".repeat(count);
     length += options.tabWidth * count;
   }
 
+  /**
+   * @param {number} count
+   */
   function addSpaces(count) {
     value += " ".repeat(count);
     length += count;
@@ -109,6 +147,13 @@ function generateInd(ind, newPart, options) {
   }
 }
 
+/**
+ * @param {Command} next
+ * @param {Command[]} restCommands
+ * @param {number} width
+ * @param {PrinterOptions} options
+ * @param {boolean=} mustBeFlat
+ */
 function fits(next, restCommands, width, options, mustBeFlat) {
   let restIdx = restCommands.length;
   const cmds = [next];
@@ -124,7 +169,7 @@ function fits(next, restCommands, width, options, mustBeFlat) {
       continue;
     }
 
-    const x = cmds.pop();
+    const x = /** @type {Command} */ (cmds.pop());
     const ind = x[0];
     const mode = x[1];
     const doc = x[2];
@@ -201,6 +246,16 @@ function fits(next, restCommands, width, options, mustBeFlat) {
   return false;
 }
 
+/**
+ * @typedef {Object} PrintDocToStringResult
+ * @property {string} formatted
+ * @property {number=} cursorNodeStart
+ * @property {string=} cursorNodeText
+ *
+ * @param {Doc} doc
+ * @param {PrinterOptions} options
+ * @returns {PrintDocToStringResult}
+ */
 function printDocToString(doc, options) {
   groupModeMap = {};
 
@@ -210,13 +265,17 @@ function printDocToString(doc, options) {
   // cmds is basically a stack. We've turned a recursive call into a
   // while loop which is much faster. The while loop below adds new
   // cmds to the array instead of recursively calling `print`.
+  /** @type {Command[]} */
   const cmds = [[rootIndent(), MODE_BREAK, doc]];
+
+  /** @type {Array<string | Cursor["placeholder"]>} */
   const out = [];
+
   let shouldRemeasure = false;
   let lineSuffix = [];
 
   while (cmds.length !== 0) {
-    const x = cmds.pop();
+    const x = /** @type {Command} */ (cmds.pop());
     const ind = x[0];
     const mode = x[1];
     const doc = x[2];
@@ -262,6 +321,7 @@ function printDocToString(doc, options) {
             case MODE_BREAK: {
               shouldRemeasure = false;
 
+              /** @type {Command} */
               const next = [ind, MODE_FLAT, doc.contents];
               const rem = width - pos;
 
@@ -291,6 +351,8 @@ function printDocToString(doc, options) {
                         break;
                       } else {
                         const state = doc.expandedStates[i];
+
+                        /** @type {Command} */
                         const cmd = [ind, MODE_FLAT, state];
 
                         if (fits(cmd, cmds, rem, options)) {
@@ -343,8 +405,12 @@ function printDocToString(doc, options) {
           }
 
           const content = parts[0];
+
+          /** @type {Command} */
           const contentFlatCmd = [ind, MODE_FLAT, content];
+          /** @type {Command} */
           const contentBreakCmd = [ind, MODE_BREAK, content];
+
           const contentFits = fits(contentFlatCmd, [], rem, options, true);
 
           if (parts.length === 1) {
@@ -357,7 +423,10 @@ function printDocToString(doc, options) {
           }
 
           const whitespace = parts[1];
+
+          /** @type {Command} */
           const whitespaceFlatCmd = [ind, MODE_FLAT, whitespace];
+          /** @type {Command} */
           const whitespaceBreakCmd = [ind, MODE_BREAK, whitespace];
 
           if (parts.length === 2) {
@@ -377,10 +446,13 @@ function printDocToString(doc, options) {
           // elements to a new array would make this algorithm quadratic,
           // which is unusable for large arrays (e.g. large texts in JSX).
           parts.splice(0, 2);
+
+          /** @type {Command} */
           const remainingCmd = [ind, mode, fill(parts)];
 
           const secondContent = parts[0];
 
+          /** @type {Command} */
           const firstAndSecondContentFlatCmd = [
             ind,
             MODE_FLAT,
@@ -475,17 +547,16 @@ function printDocToString(doc, options) {
                   // Trim whitespace at the end of line
                   while (
                     out.length > 0 &&
-                    typeof out[out.length - 1] === "string" &&
-                    out[out.length - 1].match(/^[^\S\n]*$/)
+                    (lastOutPart =>
+                      typeof lastOutPart === "string" &&
+                      lastOutPart.match(/^[^\S\n]*$/))(out[out.length - 1])
                   ) {
                     out.pop();
                   }
 
-                  if (out.length && typeof out[out.length - 1] === "string") {
-                    out[out.length - 1] = out[out.length - 1].replace(
-                      /[^\S\n]*$/,
-                      ""
-                    );
+                  const lastOutPart = out[out.length - 1];
+                  if (typeof lastOutPart === "string") {
+                    out[out.length - 1] = lastOutPart.replace(/[^\S\n]*$/, "");
                   }
                 }
 
@@ -519,7 +590,7 @@ function printDocToString(doc, options) {
     };
   }
 
-  return { formatted: out.join("") };
+  return { formatted: /** @type {string[]}*/ (out).join("") };
 }
 
 module.exports = { printDocToString };

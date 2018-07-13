@@ -1,6 +1,15 @@
 "use strict";
 
+/**
+ * @param {Doc} doc
+ * @param {((doc: Doc) => void | boolean)=} onEnter
+ * @param {((doc: Doc) => void)=} onExit
+ * @param {boolean=} shouldTraverseConditionalGroups
+ */
 function traverseDoc(doc, onEnter, onExit, shouldTraverseConditionalGroups) {
+  /**
+   * @param {Doc} doc
+   */
   function traverseDocRec(doc) {
     let shouldRecurse = true;
     if (onEnter) {
@@ -9,7 +18,7 @@ function traverseDoc(doc, onEnter, onExit, shouldTraverseConditionalGroups) {
       }
     }
 
-    if (shouldRecurse) {
+    if (shouldRecurse && typeof doc !== "string") {
       if (doc.type === "concat" || doc.type === "fill") {
         for (let i = 0; i < doc.parts.length; i++) {
           traverseDocRec(doc.parts[i]);
@@ -27,7 +36,7 @@ function traverseDoc(doc, onEnter, onExit, shouldTraverseConditionalGroups) {
         } else {
           traverseDocRec(doc.contents);
         }
-      } else if (doc.contents) {
+      } else if ("contents" in doc) {
         traverseDocRec(doc.contents);
       }
     }
@@ -40,7 +49,16 @@ function traverseDoc(doc, onEnter, onExit, shouldTraverseConditionalGroups) {
   traverseDocRec(doc);
 }
 
+/**
+ * @param {Doc} doc
+ * @param {(doc: Doc) => Doc} cb
+ * @returns {Doc}
+ */
 function mapDoc(doc, cb) {
+  if (typeof doc === "string") {
+    return cb(doc);
+  }
+
   if (doc.type === "concat" || doc.type === "fill") {
     const parts = doc.parts.map(part => mapDoc(part, cb));
     return cb(Object.assign({}, doc, { parts }));
@@ -48,13 +66,19 @@ function mapDoc(doc, cb) {
     const breakContents = doc.breakContents && mapDoc(doc.breakContents, cb);
     const flatContents = doc.flatContents && mapDoc(doc.flatContents, cb);
     return cb(Object.assign({}, doc, { breakContents, flatContents }));
-  } else if (doc.contents) {
+  } else if ("contents" in doc) {
     const contents = mapDoc(doc.contents, cb);
     return cb(Object.assign({}, doc, { contents }));
   }
+
   return cb(doc);
 }
 
+/**
+ * @param {Doc} doc
+ * @param {(doc: Doc) => void | any} fn
+ * @param {any} defaultValue
+ */
 function findInDoc(doc, fn, defaultValue) {
   let result = defaultValue;
   let hasStopped = false;
@@ -71,10 +95,17 @@ function findInDoc(doc, fn, defaultValue) {
   return result;
 }
 
+/**
+ * @param {Doc} n
+ */
 function isEmpty(n) {
   return typeof n === "string" && n.length === 0;
 }
 
+/**
+ * @param {Doc} doc
+ * @returns {boolean}
+ */
 function isLineNext(doc) {
   return findInDoc(
     doc,
@@ -90,6 +121,10 @@ function isLineNext(doc) {
   );
 }
 
+/**
+ * @param {Doc} doc
+ * @returns {boolean}
+ */
 function willBreak(doc) {
   return findInDoc(
     doc,
@@ -108,6 +143,9 @@ function willBreak(doc) {
   );
 }
 
+/**
+ * @param {Group[]} groupStack
+ */
 function breakParentGroup(groupStack) {
   if (groupStack.length > 0) {
     const parentGroup = groupStack[groupStack.length - 1];
@@ -120,8 +158,12 @@ function breakParentGroup(groupStack) {
   return null;
 }
 
+/**
+ * @param {Doc} doc
+ */
 function propagateBreaks(doc) {
   const alreadyVisited = new Map();
+  /** @type {Group[]} */
   const groupStack = [];
   traverseDoc(
     doc,
@@ -139,7 +181,7 @@ function propagateBreaks(doc) {
     },
     doc => {
       if (doc.type === "group") {
-        const group = groupStack.pop();
+        const group = /** @type {Group} */ (groupStack.pop());
         if (group.break) {
           breakParentGroup(groupStack);
         }
@@ -149,6 +191,10 @@ function propagateBreaks(doc) {
   );
 }
 
+/**
+ * @param {Doc} doc
+ * @return {Doc}
+ */
 function removeLines(doc) {
   // Force this doc into flat mode by statically converting all
   // lines into spaces (or soft lines into nothing). Hard lines
@@ -164,17 +210,24 @@ function removeLines(doc) {
   });
 }
 
+/**
+ * @param {Doc} doc
+ * @returns {Doc}
+ */
 function stripTrailingHardline(doc) {
   // HACK remove ending hardline, original PR: #1984
-  if (
-    doc.type === "concat" &&
-    doc.parts.length === 2 &&
-    doc.parts[1].type === "concat" &&
-    doc.parts[1].parts.length === 2 &&
-    doc.parts[1].parts[0].hard &&
-    doc.parts[1].parts[1].type === "break-parent"
-  ) {
-    return doc.parts[0];
+  if (doc.type === "concat" && doc.parts.length === 2) {
+    const lastPart = doc.parts[1];
+    if (lastPart.type === "concat" && lastPart.parts.length === 2) {
+      const firstPartInLastPart = lastPart.parts[0];
+      if (
+        firstPartInLastPart.type === "line" &&
+        firstPartInLastPart.hard &&
+        lastPart.parts[1].type === "break-parent"
+      ) {
+        return doc.parts[0];
+      }
+    }
   }
   return doc;
 }
