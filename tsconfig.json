@@ -4,7 +4,18 @@
     "allowJs": true,
     "checkJs": true,
     "noEmit": true,
-    "lib": ["es6"]
+    "lib": ["es6"],
+    "typeRoots": [
+      "node_modules/@types",
+      "src/@types"
+    ]
   },
-  "include": ["src/doc/**/*.js", "src/types.d.ts", "src/common/fast-path.js"]
+  "include": [
+    "src/common/fast-path.js",
+    "src/common/third-party.js",
+    "src/common/util.js",
+    "src/config/**/*.js",
+    "src/doc/**/*.js",
+    "src/types.d.ts"
+  ]
 }

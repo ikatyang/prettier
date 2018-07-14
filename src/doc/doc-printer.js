@@ -31,7 +31,7 @@ function rootIndent() {
 
 /**
  * @param {Indentation} ind
- * @param {PrinterOptions} options
+ * @param {DocPrinterOptions} options
  * @returns {Indentation}
  */
 function makeIndent(ind, options) {
@@ -41,7 +41,7 @@ function makeIndent(ind, options) {
 /**
  * @param {Indentation} ind
  * @param {number | string | { type: "root" }} n
- * @param {PrinterOptions} options
+ * @param {DocPrinterOptions} options
  */
 function makeAlign(ind, n, options) {
   return n === -Infinity
@@ -60,7 +60,7 @@ function makeAlign(ind, n, options) {
 /**
  * @param {Indentation} ind
  * @param {IndentationPart} newPart
- * @param {PrinterOptions} options
+ * @param {DocPrinterOptions} options
  * @returns {Indentation}
  */
 function generateInd(ind, newPart, options) {
@@ -151,7 +151,7 @@ function generateInd(ind, newPart, options) {
  * @param {Command} next
  * @param {Command[]} restCommands
  * @param {number} width
- * @param {PrinterOptions} options
+ * @param {DocPrinterOptions} options
  * @param {boolean=} mustBeFlat
  */
 function fits(next, restCommands, width, options, mustBeFlat) {
@@ -253,7 +253,7 @@ function fits(next, restCommands, width, options, mustBeFlat) {
  * @property {string=} cursorNodeText
  *
  * @param {Doc} doc
- * @param {PrinterOptions} options
+ * @param {DocPrinterOptions} options
  * @returns {PrintDocToStringResult}
  */
 function printDocToString(doc, options) {

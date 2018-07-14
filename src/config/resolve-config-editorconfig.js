@@ -7,25 +7,49 @@ const mem = require("mem");
 const editorConfigToPrettier = require("editorconfig-to-prettier");
 const findProjectRoot = require("find-project-root");
 
-const maybeParse = (filePath, config, parse) => {
+/**
+ * @template T
+ * @param {string=} filePath
+ * @param {string=} configPath
+ * @param {(filePath: string, opts?: any) => T} parse
+ * @returns {undefined | T}
+ */
+const maybeParse = (filePath, configPath, parse) => {
+  if (!filePath) {
+    return undefined;
+  }
+
   const root = findProjectRoot(path.dirname(path.resolve(filePath)));
-  return filePath && parse(filePath, { root });
+  return parse(filePath, { root });
 };
 
-const editorconfigAsyncNoCache = (filePath, config) => {
-  return Promise.resolve(maybeParse(filePath, config, editorconfig.parse)).then(
-    editorConfigToPrettier
-  );
+/**
+ * @param {string=} filePath
+ * @param {string=} configPath
+ */
+const editorconfigAsyncNoCache = (filePath, configPath) => {
+  return Promise.resolve(
+    // @ts-ignore
+    maybeParse(filePath, configPath, editorconfig.parse)
+  ).then(editorConfigToPrettier);
 };
 const editorconfigAsyncWithCache = mem(editorconfigAsyncNoCache);
 
-const editorconfigSyncNoCache = (filePath, config) => {
+/**
+ * @param {string=} filePath
+ * @param {string=} configPath
+ */
+const editorconfigSyncNoCache = (filePath, configPath) => {
   return editorConfigToPrettier(
-    maybeParse(filePath, config, editorconfig.parseSync)
+    maybeParse(filePath, configPath, editorconfig.parseSync)
   );
 };
 const editorconfigSyncWithCache = mem(editorconfigSyncNoCache);
 
+/**
+ * @param {{ editorconfig: boolean, sync: boolean, cache: boolean }} opts
+ * @returns {(filePath: string, configPath?: string) => MaybePromise<null | import("editorconfig-to-prettier").Output>}
+ */
 function getLoadFunction(opts) {
   if (!opts.editorconfig) {
     return () => null;

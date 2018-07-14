@@ -1,3 +1,7 @@
+type MaybePromise<T> = T | Promise<T>;
+
+//==============================================================================
+
 type Doc =
   | string
   | Align
@@ -82,14 +86,41 @@ type FastPath<T = any> = import("./common/fast-path")<T>;
 
 //==============================================================================
 
-interface PrinterOptions {
+interface DocPrinterOptions {
   useTabs: boolean;
   tabWidth: number;
   printWidth: number;
   newLine: string;
+}
 
-  //
+interface CoreOptions extends DocPrinterOptions {
   parser: string;
+}
+
+interface CommonOptions {
   singleQuote: boolean;
   proseWrap: "preserve" | "always" | "never";
+}
+
+interface PrettierOptions extends CoreOptions, CommonOptions {
+  plugins: string[];
+  pluginSearchDirs: string[];
+}
+
+interface PrinterOptions extends PrettierOptions {
+  superParser?: string;
+}
+
+interface PrettierConfigFile extends Partial<PrettierOptions> {
+  overrides?: Array<{
+    files: string | string[];
+    excludeFiles?: string | string[];
+    options: Partial<PrettierOptions>;
+  }>;
+}
+
+interface ResolveConfigOptions {
+  config?: string;
+  useCache?: boolean;
+  editorconfig?: boolean;
 }
