@@ -90,7 +90,7 @@ interface DocPrinterOptions {
   useTabs: boolean;
   tabWidth: number;
   printWidth: number;
-  newLine: string;
+  newLine?: string;
 }
 
 interface CoreOptions extends DocPrinterOptions {
