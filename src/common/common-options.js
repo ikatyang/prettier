@@ -17,7 +17,8 @@ module.exports = {
     category: CATEGORY_COMMON,
     type: "boolean",
     default: false,
-    description: "Use single quotes instead of double quotes."
+    description: "Use single quotes instead of double quotes.",
+    forward: value => ({ to: { key: "css/singleQuote", value } })
   },
   proseWrap: {
     since: "1.8.2",

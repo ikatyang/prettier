@@ -882,7 +882,7 @@ function adjustStrings(value, options) {
 }
 
 function quoteAttributeValue(value, options) {
-  const quote = options.singleQuote ? "'" : '"';
+  const quote = options["css/singleQuote"] ? "'" : '"';
   return value.includes('"') || value.includes("'")
     ? value
     : quote + value + quote;

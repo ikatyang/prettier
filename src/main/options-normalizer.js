@@ -1,6 +1,7 @@
 "use strict";
 
 const vnopts = require("vnopts");
+const dashify = require("dashify");
 
 const cliDescriptor = {
   key: key => (key.length === 1 ? `-${key}` : `--${key}`),
@@ -111,6 +112,28 @@ function optionInfoToSchema(optionInfo, { isCLI }) {
               value: optionInfo.redirect.value
             }
           };
+  }
+
+  if (optionInfo.forward) {
+    handlers.forward = (value, schema, utils) => {
+      const rawForwardResult = optionInfo.forward(value, schema, utils);
+
+      if (!isCLI) {
+        return rawForwardResult;
+      }
+
+      // Forward results are written in api-key format,
+      // we need to transform them into cli-key format to get cli worked.
+      return utils
+        .normalizeForwardResult(rawForwardResult, value)
+        .map(({ from, to }) => ({
+          from,
+          to:
+            typeof to === "string"
+              ? dashify(to)
+              : { key: dashify(to.key), value: to.value }
+        }));
+    };
   }
 
   if (optionInfo.deprecated) {
