@@ -117,11 +117,16 @@ function mapNode(node, fn, parent = null, index = -1) {
   return fn(newNode, index, parent);
 }
 
+function identity(x) {
+  return x;
+}
+
 module.exports = {
   HTML_ELEMENT_ATTRIBUTES,
   HTML_TAGS,
   VOID_TAGS,
   hasPrettierIgnore,
+  identity,
   isScriptTagNode,
   isWhitespaceOnlyText,
   isWhitespaceSensitiveTagNode,
