@@ -1,11 +1,13 @@
 "use strict";
 
+const { getLast } = require("../common/util");
 const embed = require("./embed");
 const clean = require("./clean");
 const {
   builders: {
     breakParent,
     concat,
+    dedent,
     dedentToRoot,
     group,
     hardline,
@@ -14,51 +16,17 @@ const {
     join,
     line,
     softline
-  }
+  },
+  debug: { printDocToDebug }
 } = require("../doc");
-const {
-  VOID_TAGS,
-  hasPrettierIgnore,
-  isWhitespaceOnlyText,
-  isWhitespaceSensitiveTagNode
-} = require("./utils");
-const LineAndColumn = (m => m.default || m)(require("lines-and-columns"));
+const { hasPrettierIgnore, identity } = require("./utils");
+const preprocess = require("./preprocess");
 
-/**
- * modifications:
- * - remove whitespaceOnly `text` node
- * - add `startLocation` and `endLocation` field
- */
-function preprocess(
-  ast,
-  options,
-  locator = new LineAndColumn(options.originalText)
-) {
-  const startLocation = locator.locationForIndex(options.locStart(ast));
-  const endLocation = locator.locationForIndex(options.locEnd(ast) - 1);
-
-  if (!ast.children) {
-    return Object.assign({}, ast, { startLocation, endLocation });
-  }
-
-  const children = [];
-
-  for (let i = 0; i < ast.children.length; i++) {
-    const child = ast.children[i];
-
-    if (isWhitespaceOnlyText(child)) {
-      continue;
-    }
-
-    children.push(child);
-  }
-
-  return Object.assign({}, ast, {
-    startLocation,
-    endLocation,
-    children: children.map(child => preprocess(child, options, locator))
-  });
-}
+const debug = x => {
+  console.log(printDocToDebug(x));
+  // console.log(JSON.stringify(x));
+  return x;
+};
 
 function genericPrint(path, options, print) {
   const node = path.getValue();
@@ -67,8 +35,8 @@ function genericPrint(path, options, print) {
     case "root":
       return node.children.length === 0
         ? ""
-        : concat([printChildren(path, print, options), hardline]);
-    case "directive":
+        : debug(concat([group(printChildren(path, print, options)), hardline]));
+    case "directive": //TODO
       return concat([
         "<",
         node.name === "!doctype"
@@ -83,77 +51,96 @@ function genericPrint(path, options, print) {
         ">"
       ]);
     case "text": {
-      const parentNode = path.getParentNode();
+      // if (isWhitespaceSensitiveTagNode(parentNode)) {
+      //   return concat(
+      //     node.data
+      //       .split(/(\n)/g)
+      //       .map((x, i) => (i % 2 === 1 ? dedentToRoot(hardline) : x))
+      //   );
+      // }
 
-      if (isWhitespaceSensitiveTagNode(parentNode)) {
-        return concat(
-          node.data
-            .split(/(\n)/g)
-            .map((x, i) => (i % 2 === 1 ? dedentToRoot(hardline) : x))
-        );
-      }
-
-      return node.data.replace(/\s+/g, " ").trim();
+      return concat([
+        printOpeningTagPrefix(node),
+        node.data.replace(/\s+/g, " ").trim(),
+        printClosingTagSuffix(node)
+      ]);
     }
     case "script":
     case "style":
     case "tag": {
-      const isVoid = node.name in VOID_TAGS;
-      const openingTagDoc = printOpeningTag(path, print, isVoid);
+      const openingTagDoc = printOpeningTag(path, options, print);
 
-      if (isVoid || node.selfClosing) {
+      if (node.isSelfClosing) {
         return group(openingTagDoc);
       }
 
       const closingTagDoc = printClosingTag(node);
 
       if (node.children.length === 0) {
-        return group(
-          concat([
-            openingTagDoc,
-            node.type === "script" && node.attribs.src
-              ? /**
-                 * <script
-                 *   src="long-long-long-long-long-long-long-long-long-long-long-long-long-long-string"
-                 *   async
-                 * ></script>
-                 */
-                ""
-              : /**
-                 * <div
-                 *   class="long-long-long-long-long-long-long-long-long-long-long-long-long-long-string"
-                 *   something="something"
-                 * >
-                 * </div>
-                 */
-                softline,
-            closingTagDoc
-          ])
-        );
+        return group(concat([openingTagDoc, closingTagDoc]));
       }
 
-      if (isWhitespaceSensitiveTagNode(node)) {
-        return concat([
-          group(openingTagDoc),
-          printChildren(path, print, options),
-          closingTagDoc
-        ]);
-      }
+      // if (node.children.length === 0) {
+      //   return group(
+      //     concat([
+      //       openingTagDoc,
+      //       node.type === "script" && node.attribs.src
+      //         ? /**
+      //            * <script
+      //            *   src="long-long-long-long-long-long-long-long-long-long-long-long-long-long-string"
+      //            *   async
+      //            * ></script>
+      //            */
+      //           ""
+      //         : /**
+      //            * <div
+      //            *   class="long-long-long-long-long-long-long-long-long-long-long-long-long-long-string"
+      //            *   something="something"
+      //            * >
+      //            * </div>
+      //            */
+      //           softline,
+      //       closingTagDoc
+      //     ])
+      //   );
+      // }
 
-      return group(
-        concat([
-          group(openingTagDoc),
-          node.attributes.length > 1 ||
-          node.children.some(childNode => childNode.type !== "text")
-            ? breakParent
-            : "",
-          indent(concat([softline, printChildren(path, print, options)])),
-          softline,
-          closingTagDoc
-        ])
+      // if (isWhitespaceSensitiveTagNode(node)) {
+      //   return concat([
+      //     group(openingTagDoc),
+      //     printChildren(path, print, options),
+      //     closingTagDoc
+      //   ]);
+      // }
+
+      const containsTag = node.children.some(
+        childNode => childNode.type !== "text"
       );
+
+      return concat([
+        openingTagDoc,
+        group(
+          concat([printChildren(path, print), containsTag ? breakParent : ""])
+        ),
+        closingTagDoc
+      ]);
+
+      // const forceBreak = node.children.some(
+      //   childNode => childNode.type !== "text"
+      // );
+
+      // return group(
+      //   concat([
+      //     group(openingTagDoc),
+      //     concat([
+      //       indent(concat([softline, printChildren(path, print, options)])),
+      //       softline
+      //     ]),
+      //     closingTagDoc
+      //   ])
+      // );
     }
-    case "comment":
+    case "comment": //TODO
       return concat(["<!--", node.data, "-->"]);
     case "attribute":
       return node.value === null
@@ -175,64 +162,283 @@ function genericPrint(path, options, print) {
   }
 }
 
-function printOpeningTag(path, print, isVoid) {
+function printOpeningTag(path, options, print) {
   const node = path.getValue();
 
-  const selfClosing = isVoid || node.selfClosing;
+  if (
+    node.shouldBreakOpeningTagByFirstChild &&
+    node.shouldBreakOpeningTagByPrevNode
+  ) {
+    /**
+     *     123<p  <-- at prev close tag
+     *     | attr <-- at open tag
+     *       >    <-- at firstChild open tag
+     *
+     *     ><p    <-- at open tag
+     *     | attr <-- at open tag
+     *       >    <-- at firstChild open tag
+     */
+    return group(
+      concat([
+        printClosingTagEndMarker(node.prev),
+        node.prev.type === "text" ? "" : concat(["<", node.name]),
+        node.attributes.length === 0
+          ? ""
+          : indent(
+              concat([
+                hardline,
+                group(join(line, path.map(print, "attributes")))
+              ])
+            )
+      ])
+    );
+  }
+
+  if (node.shouldBreakOpeningTagByFirstChild) {
+    /**
+     *     <p     <-- at open tag
+     *     | attr <-- at open tag
+     *       >    <-- at firstChild open tag
+     */
+    return group(
+      concat([
+        printOpeningTagPrefix(node),
+        "<",
+        node.name,
+        node.attributes.length === 0
+          ? ""
+          : indent(
+              concat([
+                hardline,
+                group(join(line, path.map(print, "attributes")))
+              ])
+            )
+      ])
+    );
+  }
+
+  if (node.shouldBreakOpeningTagByPrevNode) {
+    /**
+     *     123<p  <-- at prev close tag
+     *     | attr <-- at open tag
+     *     >      <-- at open tag
+     *
+     *     ><p    <-- at open tag
+     *     | attr <-- at open tag
+     *     >      <-- at open tag
+     */
+    return group(
+      concat([
+        printClosingTagEndMarker(node.prev),
+        node.prev.type === "text" ? "" : concat(["<", node.name]),
+        node.attributes.length === 0
+          ? ""
+          : concat([
+              printIndent(options),
+              group(join(line, path.map(print, "attributes"))),
+              hardline
+            ]),
+        printClosingTagEndMarker(node),
+        node.isSelfClosing ? printClosingTagSuffix(node) : ""
+      ])
+    );
+  }
 
   const forceSingeLine =
     node.attributes.length === 0 ||
     (node.attributes.length === 1 &&
       (!node.attributes[0].value || !node.attributes[0].value.includes("\n")));
 
-  return concat([
-    "<",
-    node.name,
-    indent(
-      concat([
-        forceSingeLine ? (node.attributes.length === 0 ? "" : " ") : line,
-        join(line, path.map(print, "attributes"))
-      ])
-    ),
-    forceSingeLine
-      ? selfClosing
-        ? " />"
-        : ">"
-      : concat([softline, selfClosing ? concat([ifBreak("", " "), "/>"]) : ">"])
-  ]);
+  return group(
+    concat([
+      printOpeningTagPrefix(node),
+      "<",
+      node.name,
+      group(
+        indent(
+          concat([
+            forceSingeLine ? (node.attributes.length === 0 ? "" : " ") : line,
+            join(line, path.map(print, "attributes"))
+          ])
+        )
+      ),
+      forceSingeLine
+        ? concat([
+            node.isSelfClosing
+              ? concat([" />", printClosingTagSuffix(node)])
+              : ">"
+          ])
+        : concat([
+            softline,
+            node.isSelfClosing
+              ? concat([ifBreak("", " "), "/>", printClosingTagSuffix(node)])
+              : ">"
+          ])
+    ])
+  );
 }
 
 function printClosingTag(node) {
-  return concat(["</", node.name, ">"]);
+  if (
+    node.shouldBreakClosingTagByLastChild &&
+    node.shouldBreakClosingTagByNextNode
+  ) {
+    /**
+     *     <p
+     *       >123</p <-- at lastChild close tag
+     *     ><div     <-- at next open tag
+     */
+    return "";
+  }
+
+  if (node.shouldBreakClosingTagByLastChild) {
+    /**
+     *     <p
+     *       >123</p <-- at lastChild close tag
+     *     >         <-- at close tag
+     */
+    return concat([">", printClosingTagSuffix(node)]);
+  }
+
+  if (node.shouldBreakClosingTagByNextNode) {
+    /**
+     *     <p>
+     *       123
+     *     </p   <-- at close tag
+     *     ><div <-- at next open tag
+     */
+    return concat(["</", node.name]);
+  }
+
+  return concat(["</", node.name, ">", printClosingTagSuffix(node)]);
 }
 
-function printChildren(path, print /*, options*/) {
-  const parts = [];
+function printIndent(options) {
+  return options.useTabs ? "\t" : " ".repeat(options.tabWidth);
+}
 
+function printOpeningTagPrefix(node) {
+  if (!node.prev && node.parent.shouldBreakOpeningTagByFirstChild) {
+    return printClosingTagEndMarker(node.parent);
+  }
+
+  if (node.prev && node.prev.shouldBreakClosingTagByNextNode) {
+    return printClosingTagEndMarker(node.prev);
+  }
+
+  return "";
+}
+
+function printClosingTagSuffix(node) {
+  if (!node.next && node.parent.shouldBreakClosingTagByLastChild) {
+    return concat(["</", node.parent.name]);
+  }
+
+  if (node.next && node.next.shouldBreakOpeningTagByPrevNode) {
+    return node.next.type === "text" ? "" : concat(["<", node.next.name]);
+  }
+
+  return "";
+}
+
+function printClosingTagEndMarker(node) {
+  return node.type === "text" ? "" : node.isSelfClosing ? "/>" : ">";
+}
+
+// function printFrontTagEndMarker(node, isClosingTag) {
+//   if (isClosingTag) {
+//     if (node.children && node.children.length !== 0) {
+//       const lastChild = getLast(node.children);
+//       if (lastChild.shouldBreakClosingTag) {
+//         return printClosingTagEndMarker(lastChild);
+//       }
+//     }
+//     return "";
+//   }
+
+//   return node.prev && node.prev.shouldBreakClosingTag
+//     ? printOpeningTagEndMarker(node.prev)
+//     : node.parent && node.parent.shouldBreakOpeningTag
+//       ? printOpeningTagEndMarker(node.parent)
+//       : "";
+// }
+
+function printChildren(path, print /*, options*/) {
   const node = path.getValue();
 
-  path.map((childPath, index) => {
+  const parts = [];
+
+  path.map((childPath, childIndex) => {
     const childNode = childPath.getValue();
 
-    parts.push(print(childPath));
+    parts.push(
+      (node.type === "root" ? identity : indent)(
+        concat([
+          childNode.hasLeadingSpaces
+            ? line
+            : (childIndex === 0
+              ? node.shouldBreakOpeningTagByFirstChild
+              : childNode.prev.shouldBreakClosingTagByNextNode)
+              ? softline
+              : "",
+          print(childPath)
+        ])
+      )
+    );
 
-    if (index !== node.children.length - 1) {
-      parts.push(hardline);
-
-      if (
-        childNode.type === "yaml" ||
-        childNode.type === "toml" ||
-        // next empty line
-        (childNode.type !== "text" &&
-          childNode.type !== "directive" &&
-          node.children[index + 1].startLocation.line -
-            childNode.endLocation.line >
-            1)
-      ) {
-        parts.push(hardline);
-      }
+    if (childIndex === node.children.length - 1) {
+      parts.push(
+        childNode.hasTrailingSpaces
+          ? line
+          : node.shouldBreakClosingTagByLastChild
+            ? softline
+            : ""
+      );
     }
   }, "children");
+
+  // const parts = [];
+
+  // const node = path.getValue();
+
+  // path.map((childPath, index) => {
+  //   const childNode = childPath.getValue();
+
+  //   if (index === 0) {
+  //     if (node.type !== "root" && !node.shouldBreakOpeningTagByFirstChild) {
+  //       parts.push(hardline);
+  //     }
+  //   }
+
+  //   parts.push(print(childPath));
+
+  //   if (index === node.children.length - 1) {
+  //     if (childNode.type !== "root" && !node.shouldBreakClosingTagByLastChild) {
+  //       parts.push(dedent(hardline));
+  //     }
+  //   } else {
+  //     if (!childNode.next.shouldBreakOpeningTagByPrevNode) {
+  //       parts.push(hardline);
+  //     }
+  //   }
+
+  // if (childNode.hasTrailingSpaces) {
+  //   parts.push(hardline);
+  // }
+  // if (
+  //   childNode.type === "yaml" ||
+  //   childNode.type === "toml" ||
+  //   // next empty line
+  //   (childNode.type !== "text" &&
+  //     childNode.type !== "directive" &&
+  //     node.children[index + 1].startLocation.line -
+  //       childNode.endLocation.line >
+  //       1)
+  // ) {
+  //   parts.push(hardline);
+  // }
+  // parts.push(group(concat(subParts)));
+  // }, "children");
 
   return concat(parts);
 }

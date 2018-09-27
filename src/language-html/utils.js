@@ -66,12 +66,25 @@ function hasPrettierIgnore(path) {
   return isPrettierIgnore(prevNode);
 }
 
-function isPrettierIgnore(node) {
-  return node.type === "comment" && node.data.trim() === "prettier-ignore";
+/**
+ * @param {unknown} node
+ * @param {(node: unknown, index: number, parent: unknown | null)} fn
+ * @param {unknown=} parent
+ */
+function mapNode(node, fn, parent = null, index = -1) {
+  const newNode = Object.assign({}, node);
+
+  if (newNode.children) {
+    newNode.children = newNode.children.map((child, childIndex) =>
+      mapNode(child, fn, node, childIndex)
+    );
+  }
+
+  return fn(newNode, index, parent);
 }
 
-function isWhitespaceOnlyText(node) {
-  return node.type === "text" && node.data.trim().length === 0;
+function isPrettierIgnore(node) {
+  return node.type === "comment" && node.data.trim() === "prettier-ignore";
 }
 
 function isPreTagNode(node) {
@@ -90,11 +103,16 @@ function isWhitespaceSensitiveTagNode(node) {
   return isPreTagNode(node) || isTextAreaTagNode(node) || isScriptTagNode(node);
 }
 
+function identity(x) {
+  return x;
+}
+
 module.exports = {
   HTML_TAGS,
   VOID_TAGS,
   hasPrettierIgnore,
+  identity,
   isScriptTagNode,
-  isWhitespaceOnlyText,
-  isWhitespaceSensitiveTagNode
+  isWhitespaceSensitiveTagNode,
+  mapNode
 };
