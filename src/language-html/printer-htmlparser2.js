@@ -21,8 +21,8 @@ const { getLast } = require("../common/util");
 const { hasPrettierIgnore, identity } = require("./utils");
 const preprocess = require("./preprocess");
 
-const debug = x => {
-  // console.log(printDocToDebug(x));
+const debug = (x, fn = a => a) => {
+  console.log(fn(x));
   return x;
 };
 
@@ -31,9 +31,23 @@ function genericPrint(path, options, print) {
 
   switch (node.type) {
     case "root":
+      debug(node, JSON.stringify);
       return node.children.length === 0
         ? ""
-        : debug(concat([group(printChildren(path, print, options)), hardline]));
+        : debug(
+            concat([
+              group(
+                concat([
+                  printChildren(path, print, options),
+                  node.children.some(child => child.type !== "text")
+                    ? breakParent
+                    : ""
+                ])
+              ),
+              hardline
+            ]),
+            printDocToDebug
+          );
     case "directive": //TODO
       return concat([
         "<",
@@ -78,14 +92,6 @@ function genericPrint(path, options, print) {
         return group(concat([openingTagDoc, closingTagDoc]));
       }
 
-      const containsTag = node.children.some(
-        childNode => childNode.type !== "text"
-      );
-
-      const shouldGroupClosingTag =
-        !node.shouldBreakClosingTagByLastChild &&
-        node.shouldBreakClosingTagByNextNode;
-
       const isDoubleBreakEnd =
         node.shouldBreakClosingTagByLastChild &&
         node.parent.shouldBreakClosingTagByLastChild;
@@ -112,7 +118,9 @@ function genericPrint(path, options, print) {
       return concat([
         group(
           concat([
-            containsTag ? breakParent : "",
+            node.children.some(childNode => childNode.type !== "text")
+              ? breakParent
+              : "",
             // "(",
             // "[",
             openingTagDoc,
@@ -200,7 +208,7 @@ function printOpeningTag(path, options, print) {
       node.attributes.length === 0
         ? ""
         : indent(
-            concat([hardline, group(join(line, path.map(print, "attributes")))])
+            concat([line, group(join(line, path.map(print, "attributes")))])
           )
     ]);
   }
@@ -218,7 +226,7 @@ function printOpeningTag(path, options, print) {
       node.attributes.length === 0
         ? ""
         : indent(
-            concat([hardline, group(join(line, path.map(print, "attributes")))])
+            concat([line, group(join(line, path.map(print, "attributes")))])
           )
     ]);
   }
@@ -241,7 +249,7 @@ function printOpeningTag(path, options, print) {
         : concat([
             printIndent(options),
             group(join(line, path.map(print, "attributes"))),
-            hardline
+            line
           ]),
       printClosingTagEndMarker(node),
       node.isSelfClosing ? printClosingTagSuffix(node) : ""
@@ -258,25 +266,27 @@ function printOpeningTag(path, options, print) {
     "<",
     node.name,
     group(
-      indent(
-        concat([
-          forceSingeLine ? (node.attributes.length === 0 ? "" : " ") : line,
-          join(line, path.map(print, "attributes"))
-        ])
-      )
-    ),
-    forceSingeLine
-      ? concat([
-          node.isSelfClosing
-            ? concat([" />", printClosingTagSuffix(node)])
-            : ">"
-        ])
-      : concat([
-          softline,
-          node.isSelfClosing
-            ? concat([ifBreak("", " "), "/>", printClosingTagSuffix(node)])
-            : ">"
-        ])
+      concat([
+        indent(
+          concat([
+            forceSingeLine ? (node.attributes.length === 0 ? "" : " ") : line,
+            join(line, path.map(print, "attributes"))
+          ])
+        ),
+        forceSingeLine
+          ? concat([
+              node.isSelfClosing
+                ? concat([" />", printClosingTagSuffix(node)])
+                : ">"
+            ])
+          : concat([
+              softline,
+              node.isSelfClosing
+                ? concat([ifBreak("", " "), "/>", printClosingTagSuffix(node)])
+                : ">"
+            ])
+      ])
+    )
   ]);
 }
 
@@ -366,9 +376,10 @@ function printChildren(path, print /*, options*/) {
     parts.push(
       (node.type === "root" ? identity : indent)(
         concat([
-          childNode.shouldBreakOpeningTagByPrevNode &&
-          childNode.attributes &&
-          childNode.attributes.length !== 0
+          (node.type === "root" && childIndex === 0) ||
+          (childNode.shouldBreakOpeningTagByPrevNode &&
+            childNode.attributes &&
+            childNode.attributes.length !== 0)
             ? ""
             : softline,
           // "@",

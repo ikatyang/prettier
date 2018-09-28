@@ -100,63 +100,20 @@ ___________________________
 </div>
 <pre></pre>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<pre>
---------------------------------------------------------------------------------
-
-
-                                      *         *       *
-                                     **        **      ***
-                                     **        **       *
-   ****    ***  ****               ********  ********                   ***  ****
-  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
- *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
-**    **     **          *   ***     **        **       **     *   ***    **
-**    **     **         **    ***    **        **       **    **    ***   **
-**    **     **         ********     **        **       **    ********    **
-**    **     **         *******      **        **       **    *******     **
-**    **     **         **           **        **       **    **          **
-*******      ***        ****    *    **        **       **    ****    *   ***
-******        ***        *******      **        **      *** *  *******     ***
-**                        *****                          ***    *****
-**
-**
- **
-
---------------------------------------------------------------------------------
-</pre>
-<pre>
-
-        Text in a pre element
-
-    is displayed in a fixed-width
-
-   font, and it preserves
-
-   both             spaces and
-
-   line breaks
-
-</pre>
-<pre>     Foo     Bar     </pre>
-<pre>
-     Foo     Bar
-</pre>
-<pre>Foo     Bar
-</pre>
-<pre>
-     Foo     Bar</pre>
+<pre
+  >-------------------------------------------------------------------------------- * * * ** ** *** ** ** * **** *** **** ******** ******** *** **** * *** * **** **** * *** ******** ******** *** *** **** **** * * **** ** **** * *** ** ** *** * *** ** **** ** ** ** * *** ** ** ** * *** ** ** ** ** ** *** ** ** ** ** *** ** ** ** ** ******** ** ** ** ******** ** ** ** ** ******* ** ** ** ******* ** ** ** ** ** ** ** ** ** ** ******* *** **** * ** ** ** **** * *** ****** *** ******* ** ** *** * ******* *** ** ***** *** ***** ** ** ** --------------------------------------------------------------------------------</pre
+>
+<pre
+  >Text in a pre element is displayed in a fixed-width font, and it preserves both spaces and line breaks</pre
+>
+<pre>Foo Bar</pre>
+<pre>Foo Bar</pre>
+<pre>Foo Bar</pre>
+<pre>Foo Bar</pre>
 <figure role="img" aria-labelledby="cow-caption">
-  <pre>
-___________________________
-< I'm an expert in my field. >
----------------------------
-     \\   ^__^
-      \\  (oo)\\_______
-         (__)\\       )\\/\\
-             ||----w |
-             ||     ||
-___________________________
-  </pre>
+  <pre
+    >___________________________ < I'm an expert in my field. > --------------------------- \\ ^__^ \\ (oo)\\_______ (__)\\ )\\/\\ ||----w | || || ___________________________</pre
+  >
   <figcaption id="cow-caption">
     A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
   </figcaption>
@@ -168,18 +125,13 @@ ___________________________
   data-attr-4="foo"
   data-attr-5="foo"
   data-attr-6="foo"
+  >Foo Bar</pre
 >
-     Foo     Bar
-</pre>
 <div>
   <div>
     <div>
       <div>
-        <pre>
-          ______
-          STRING
-          ______
-        </pre>
+        <pre>______ STRING ______</pre>
       </div>
     </div>
   </div>
@@ -258,21 +210,25 @@ exports[`tags.html - html-verify 1`] = `
   attribute-f="value"
 />
 <div>string</div>
-<div>
-  very very very very very very very very very very very very very very very very long string
-</div>
-<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute>
-  string
-</div>
-<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value">
-  string
-</div>
-<div attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value">
-  string
-</div>
-<div attribute="value">
-  very very very very very very very very very very very very very very very very long string
-</div>
+<div
+  >very very very very very very very very very very very very very very very very long string</div
+>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+  >string</div
+>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+  >string</div
+>
+<div
+  attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+  >string</div
+>
+<div
+  attribute="value"
+  >very very very very very very very very very very very very very very very very long string</div
+>
 <div
   attribute="value"
   attributea="value"
@@ -280,9 +236,8 @@ exports[`tags.html - html-verify 1`] = `
   attributec="value"
   attributed="value"
   attributef="value"
+  >string</div
 >
-  string
-</div>
 <div
   attribute="value"
   attributea="value"
@@ -290,62 +245,60 @@ exports[`tags.html - html-verify 1`] = `
   attributec="value"
   attributed="value"
   attributef="value"
+  >very very very very very very very very very very very very very very very very long string</div
 >
-  very very very very very very very very very very very very very very very very long string
-</div>
 <video width="320" height="240" controls>
   <source src="movie.mp4" type="video/mp4" />
   <source src="movie.ogg" type="video/ogg" />
   Your browser does not support the video tag.
 </video>
+<div
+  ><div>string</div
+></div>
+<div
+  ><div>string</div
+  ><div>string</div
+></div>
+<div
+  ><div
+    ><div>string</div
+  ></div
+  ><div>string</div
+></div>
+<div
+  ><div>string</div
+  ><div
+    ><div>string</div
+  ></div
+></div>
+<div
+  ><div></div></div
+>
+<div
+  ><div></div
+  ><div></div></div
+>
+<div
+  ><div
+    ><div
+      ><div
+        ><div
+          ><div
+            ><div>string</div
+          ></div
+        ></div
+      ></div
+    ></div
+  ></div
+></div>
 <div>
   <div>string</div>
 </div>
 <div>
   <div>string</div>
-  <div>string</div>
-</div>
-<div>
-  <div>
-    <div>string</div>
-  </div>
-  <div>string</div>
 </div>
 <div>
   <div>string</div>
-  <div>
-    <div>string</div>
-  </div>
-</div>
-<div>
-  <div></div>
-</div>
-<div>
-  <div></div>
-  <div></div>
-</div>
-<div>
-  <div>
-    <div>
-      <div>
-        <div>
-          <div>
-            <div>string</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div>string</div>
-</div>
-<div>
-  <div>string</div>
-</div>
-<div>
-  <div>string</div>
-
   <div>string</div>
 </div>
 
@@ -393,9 +346,10 @@ exports[`textarea.html - html-verify 1`] = `
                   <div>
                     <div>
                       <div>
-                        <textarea rows="10" cols="45" name="text">
-                        String
-                        </textarea>
+                        <textarea
+                          rows="10" cols="45" name="text"
+                          >String</textarea
+                        >
                       </div>
                     </div>
                   </div>

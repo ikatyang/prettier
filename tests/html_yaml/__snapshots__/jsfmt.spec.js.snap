@@ -14,11 +14,10 @@ invalid:
     invalid:
 invalid:
 ---
-
-<html>
-  <head></head>
-  <body></body>
-</html>
+<html
+  ><head></head
+  ><body></body></html
+>
 
 `;
 
@@ -37,10 +36,9 @@ hello:     world
 ---
 hello: world
 ---
-
-<html>
-  <head></head>
-  <body></body>
-</html>
+<html
+  ><head></head
+  ><body></body></html
+>
 
 `;

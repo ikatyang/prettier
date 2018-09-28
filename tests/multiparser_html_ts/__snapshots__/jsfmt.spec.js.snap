@@ -25,13 +25,16 @@ exports[`html-with-ts-script.html - html-verify 1`] = `
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script lang="ts">
-      type X = { [K in keyof Y]: Partial<K> };
+    <script
+      lang="ts"
 
-      class Foo<T> {
-        constructor(private foo: keyof Apple) {}
-      }
-    </script>
+        type X = { [K in keyof Y]: Partial<K> };
+
+        class Foo<T> {
+          constructor(private foo: keyof Apple) {}
+        }
+
+    >
   </head>
   <body></body>
 </html>
