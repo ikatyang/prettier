@@ -2,6 +2,7 @@
 
 const parseFrontMatter = require("../utils/front-matter");
 const { HTML_ELEMENT_ATTRIBUTES, HTML_TAGS, mapNode } = require("./utils");
+const { hasPragma } = require("./pragma");
 
 function parse(text, parsers, options, { shouldParseFrontMatter = true } = {}) {
   const { frontMatter, content } = shouldParseFrontMatter
@@ -205,6 +206,7 @@ module.exports = {
   parsers: {
     html: {
       parse,
+      hasPragma,
       astFormat: "htmlparser2",
       locStart,
       locEnd
