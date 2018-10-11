@@ -343,6 +343,8 @@ function printPathNoParens(path, options, print, args) {
 
   let parts = [];
   switch (n.type) {
+    case "JsExpressionRoot":
+      return path.call(print, "node");
     case "JsonRoot":
       return concat([path.call(print, "node"), hardline]);
     case "File":
