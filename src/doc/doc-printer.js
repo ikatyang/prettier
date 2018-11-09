@@ -259,7 +259,7 @@ function printDocToString(doc, options) {
     const doc = x[2];
 
     if (typeof doc === "string") {
-      out.push(doc);
+      out.push(doc.replace(/\n/g, newLine));
 
       pos += getStringWidth(doc);
     } else {

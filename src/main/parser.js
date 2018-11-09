@@ -75,6 +75,9 @@ function parse(text, opts) {
   const parser = resolveParser(opts, parsers);
 
   try {
+    // normalize eol to avoid unexpected behavior caused by CRLF
+    text = text.replace(/\r\n?/g, "\n");
+
     if (parser.preprocess) {
       text = parser.preprocess(text, opts);
     }
