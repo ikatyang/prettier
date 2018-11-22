@@ -1,937 +1,1512 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`alias-key.yml - yaml-verify 1`] = `
-{&123 foo, *123 : 456}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ &123 foo, *123 : 456 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{&123 foo, *123 : 456}                                                          |
+                                                                                |
+=====================================output=====================================
+{ &123 foo, *123 : 456 }                                                        |
+                                                                                |
+================================================================================
 `;
 
 exports[`alias-key.yml - yaml-verify 2`] = `
-{&123 foo, *123 : 456}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ &123 foo, *123 : 456 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{&123 foo, *123 : 456}                                                          |
+                                                                                |
+=====================================output=====================================
+{ &123 foo, *123 : 456 }                                                        |
+                                                                                |
+================================================================================
 `;
 
 exports[`alias-key.yml - yaml-verify 3`] = `
-{&123 foo, *123 : 456}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{&123 foo, *123 : 456}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{&123 foo, *123 : 456}                                                          |
+                                                                                |
+=====================================output=====================================
+{&123 foo, *123 : 456}                                                          |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-key.yml - yaml-verify 1`] = `
-{? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglo|nglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-key.yml - yaml-verify 2`] = `
-{? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    [
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-    ],
-    [
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-    ],
-    [
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-    ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglo|nglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    [                                                                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+    ],                                                                          |
+    [                                                                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+    ],                                                                          |
+    [                                                                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+    ],                                                                          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-key.yml - yaml-verify 3`] = `
-{? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglo|nglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],? [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-key-array-value.yml - yaml-verify 1`] = `
-{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  ? [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ]
-  : [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  ? [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ]
-  : [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  ? [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ]
-  : [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglong|longlonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  ? [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ]                                                                           |
+  : [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  ? [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ]                                                                           |
+  : [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  ? [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ]                                                                           |
+  : [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-key-array-value.yml - yaml-verify 2`] = `
-{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    ? [
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-      ]
-    : [
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-      ],
-    ? [
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-      ]
-    : [
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-      ],
-    ? [
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-      ]
-    : [
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-          longlonglonglonglonglonglonglonglonglonglong,
-      ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglong|longlonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    ? [                                                                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+      ]                                                                         |
+    : [                                                                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+      ],                                                                        |
+    ? [                                                                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+      ]                                                                         |
+    : [                                                                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+      ],                                                                        |
+    ? [                                                                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+      ]                                                                         |
+    : [                                                                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+          longlonglonglonglonglonglonglonglonglonglong,                         |
+      ],                                                                        |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-key-array-value.yml - yaml-verify 3`] = `
-{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  ? [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ]
-  : [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  ? [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ]
-  : [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  ? [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ]
-  : [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglong|longlonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  ? [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ]                                                                           |
+  : [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  ? [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ]                                                                           |
+  : [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  ? [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ]                                                                           |
+  : [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-plain.yml - yaml-verify 1`] = `
-{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglong|longlonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-plain.yml - yaml-verify 2`] = `
-{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    [
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-    ],
-    [
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-    ],
-    [
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-        longlonglonglonglonglonglonglonglonglonglong,
-    ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglong|longlonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    [                                                                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+    ],                                                                          |
+    [                                                                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+    ],                                                                          |
+    [                                                                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+        longlonglonglonglonglonglonglonglonglonglong,                           |
+    ],                                                                          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-plain.yml - yaml-verify 3`] = `
-{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-  [
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglong,
-  ],
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglong|longlonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],[longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+  [                                                                             |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+    longlonglonglonglonglonglonglonglonglonglong,                               |
+  ],                                                                            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-value.yml - yaml-verify 1`] = `
-{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  a:
-    [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  b:
-    [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  c:
-    [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglongl|onglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  a:                                                                            |
+    [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  b:                                                                            |
+    [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  c:                                                                            |
+    [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-value.yml - yaml-verify 2`] = `
-{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    a:
-        [
-            longlonglonglonglonglonglonglonglonglonglong,
-            longlonglonglonglonglonglonglonglonglonglong,
-            longlonglonglonglonglonglonglonglonglonglong,
-        ],
-    b:
-        [
-            longlonglonglonglonglonglonglonglonglonglong,
-            longlonglonglonglonglonglonglonglonglonglong,
-            longlonglonglonglonglonglonglonglonglonglong,
-        ],
-    c:
-        [
-            longlonglonglonglonglonglonglonglonglonglong,
-            longlonglonglonglonglonglonglonglonglonglong,
-            longlonglonglonglonglonglonglonglonglonglong,
-        ],
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglongl|onglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    a:                                                                          |
+        [                                                                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+        ],                                                                      |
+    b:                                                                          |
+        [                                                                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+        ],                                                                      |
+    c:                                                                          |
+        [                                                                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+            longlonglonglonglonglonglonglonglonglonglong,                       |
+        ],                                                                      |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`array-value.yml - yaml-verify 3`] = `
-{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  a:
-    [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  b:
-    [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-  c:
-    [
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-      longlonglonglonglonglonglonglonglonglonglong,
-    ],
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{a: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglongl|onglonglonglong, longlonglonglonglonglonglonglonglonglonglong],b: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong],c: [longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong, longlonglonglonglonglonglonglonglonglonglong]}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  a:                                                                            |
+    [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  b:                                                                            |
+    [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+  c:                                                                            |
+    [                                                                           |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+      longlonglonglonglonglonglonglonglonglonglong,                             |
+    ],                                                                          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`comment-between.yml - yaml-verify 1`] = `
-{
-? 123
-# comment
-: 456
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  ? 123
-  # comment
-  : 456,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+? 123                                                                           |
+# comment                                                                       |
+: 456                                                                           |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  ? 123                                                                         |
+  # comment                                                                     |
+  : 456,                                                                        |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`comment-between.yml - yaml-verify 2`] = `
-{
-? 123
-# comment
-: 456
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    ? 123
-    # comment
-    : 456,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+? 123                                                                           |
+# comment                                                                       |
+: 456                                                                           |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    ? 123                                                                       |
+    # comment                                                                   |
+    : 456,                                                                      |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`comment-between.yml - yaml-verify 3`] = `
-{
-? 123
-# comment
-: 456
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  ? 123
-  # comment
-  : 456,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+? 123                                                                           |
+# comment                                                                       |
+: 456                                                                           |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  ? 123                                                                         |
+  # comment                                                                     |
+  : 456,                                                                        |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`comment-trailing.yml - yaml-verify 1`] = `
-{123, # comment
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  123, # comment
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{123, # comment                                                                 |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  123, # comment                                                                |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`comment-trailing.yml - yaml-verify 2`] = `
-{123, # comment
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    123, # comment
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{123, # comment                                                                 |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    123, # comment                                                              |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`comment-trailing.yml - yaml-verify 3`] = `
-{123, # comment
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  123, # comment
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{123, # comment                                                                 |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  123, # comment                                                                |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty.yml - yaml-verify 1`] = `
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty.yml - yaml-verify 2`] = `
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty.yml - yaml-verify 3`] = `
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-item-colon.yml - yaml-verify 1`] = `
-{ : }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ : }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{ : }                                                                           |
+                                                                                |
+=====================================output=====================================
+{ : }                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-item-colon.yml - yaml-verify 2`] = `
-{ : }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ : }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{ : }                                                                           |
+                                                                                |
+=====================================output=====================================
+{ : }                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-item-colon.yml - yaml-verify 3`] = `
-{ : }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{: }
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{ : }                                                                           |
+                                                                                |
+=====================================output=====================================
+{: }                                                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-line.yml - yaml-verify 1`] = `
-{ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, 
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
-
-  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,            |
+                                                                                |
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb }             |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,            |
+                                                                                |
+  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-line.yml - yaml-verify 2`] = `
-{ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, 
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
-
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,            |
+                                                                                |
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb }             |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,          |
+                                                                                |
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-line.yml - yaml-verify 3`] = `
-{ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, 
-
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
-
-  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,            |
+                                                                                |
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb }             |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,            |
+                                                                                |
+  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb,            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-line-collapse.yml - yaml-verify 1`] = `
-{ aaa, 
-
-bbb }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ aaa, bbb }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{ aaa,                                                                          |
+                                                                                |
+bbb }                                                                           |
+                                                                                |
+=====================================output=====================================
+{ aaa, bbb }                                                                    |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-line-collapse.yml - yaml-verify 2`] = `
-{ aaa, 
-
-bbb }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ aaa, bbb }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{ aaa,                                                                          |
+                                                                                |
+bbb }                                                                           |
+                                                                                |
+=====================================output=====================================
+{ aaa, bbb }                                                                    |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-line-collapse.yml - yaml-verify 3`] = `
-{ aaa, 
-
-bbb }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{aaa, bbb}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{ aaa,                                                                          |
+                                                                                |
+bbb }                                                                           |
+                                                                                |
+=====================================output=====================================
+{aaa, bbb}                                                                      |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-key.yml - yaml-verify 1`] = `
-{? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,? longlongl|onglonglonglonglonglonglonglonglonglonglonglonglonglong2,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-key.yml - yaml-verify 2`] = `
-{? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,? longlongl|onglonglonglonglonglonglonglonglonglonglonglonglonglong2,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,          |
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,          |
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-key.yml - yaml-verify 3`] = `
-{? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,? longlongl|onglonglonglonglonglonglonglonglonglonglonglonglonglong2,? longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-key-long-value.yml - yaml-verify 1`] = `
-{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglong|longlonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglon|glonglonglonglonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglon|glonglonglonglonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglon|glonglonglonglonglonglonglonglonglonglonglonglonglong,
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-key-long-value.yml - yaml-verify 2`] = `
-{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglong|longlonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlongl|onglonglonglonglonglonglonglonglonglonglonglonglonglong,
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlongl|onglonglonglonglonglonglonglonglonglonglonglonglonglong,
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlongl|onglonglonglonglonglonglonglonglonglonglonglonglonglong,
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-key-long-value.yml - yaml-verify 3`] = `
-{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglong|longlonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1: longlonglon|glonglonglonglonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2: longlonglon|glonglonglonglonglonglonglonglonglonglonglonglonglong,
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3: longlonglon|glonglonglonglonglonglonglonglonglonglonglonglonglong,
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-plain.yml - yaml-verify 1`] = `
-{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglongl|onglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-plain.yml - yaml-verify 2`] = `
-{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
-    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglongl|onglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,          |
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,          |
+    longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-plain.yml - yaml-verify 3`] = `
-{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,
-  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,longlonglongl|onglonglonglonglonglonglonglonglonglonglonglonglong2,longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong1,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong2,            |
+  longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong3,            |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-value.yml - yaml-verify 1`] = `
-{1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,2: longlong|longlonglonglonglonglonglonglonglonglonglonglonglonglong,3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,          |
+  2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,          |
+  3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-value.yml - yaml-verify 2`] = `
-{1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-    2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-    3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,2: longlong|longlonglonglonglonglonglonglonglonglonglonglonglonglong,3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,        |
+    2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,        |
+    3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,        |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-value.yml - yaml-verify 3`] = `
-{1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-  3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,2: longlong|longlonglonglonglonglonglonglonglonglonglonglonglonglong,3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong}
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  1: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,          |
+  2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,          |
+  3: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglong,          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comment.yml - yaml-verify 1`] = `
-!!map #comment
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map #comment
-{}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!map #comment                                                                  |
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+!!map #comment                                                                  |
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comment.yml - yaml-verify 2`] = `
-!!map #comment
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map #comment
-{}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+!!map #comment                                                                  |
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+!!map #comment                                                                  |
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comment.yml - yaml-verify 3`] = `
-!!map #comment
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map #comment
-{}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!map #comment                                                                  |
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+!!map #comment                                                                  |
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comments.yml - yaml-verify 1`] = `
-!!map # comment 1
-# comment 2
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map
-# comment 1
-# comment 2
-{}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!map # comment 1                                                               |
+# comment 2                                                                     |
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+!!map                                                                           |
+# comment 1                                                                     |
+# comment 2                                                                     |
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comments.yml - yaml-verify 2`] = `
-!!map # comment 1
-# comment 2
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map
-# comment 1
-# comment 2
-{}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+!!map # comment 1                                                               |
+# comment 2                                                                     |
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+!!map                                                                           |
+# comment 1                                                                     |
+# comment 2                                                                     |
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comments.yml - yaml-verify 3`] = `
-!!map # comment 1
-# comment 2
-{}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map
-# comment 1
-# comment 2
-{}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!map # comment 1                                                               |
+# comment 2                                                                     |
+{}                                                                              |
+                                                                                |
+=====================================output=====================================
+!!map                                                                           |
+# comment 1                                                                     |
+# comment 2                                                                     |
+{}                                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`next-empty-line.yml - yaml-verify 1`] = `
-{
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123, bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123, 
-
-c: 123
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123,
-  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123,
-
-  c: 123,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123, bbbbbbbbbbbbb|bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123, 
+                                                                                |
+c: 123                                                                          |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123,            |
+  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123,            |
+                                                                                |
+  c: 123,                                                                       |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`next-empty-line.yml - yaml-verify 2`] = `
-{
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123, bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123, 
-
-c: 123
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123,
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123,
-
-    c: 123,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123, bbbbbbbbbbbbb|bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123, 
+                                                                                |
+c: 123                                                                          |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123,          |
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123,          |
+                                                                                |
+    c: 123,                                                                     |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`next-empty-line.yml - yaml-verify 3`] = `
-{
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123, bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123, 
-
-c: 123
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123,
-  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123,
-
-  c: 123,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123, bbbbbbbbbbbbb|bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123, 
+                                                                                |
+c: 123                                                                          |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: 123,            |
+  bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb: 123,            |
+                                                                                |
+  c: 123,                                                                       |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`props.yml - yaml-verify 1`] = `
-!!map &anchor {a: 1}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map &anchor { a: 1 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!map &anchor {a: 1}                                                            |
+                                                                                |
+=====================================output=====================================
+!!map &anchor { a: 1 }                                                          |
+                                                                                |
+================================================================================
 `;
 
 exports[`props.yml - yaml-verify 2`] = `
-!!map &anchor {a: 1}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map &anchor { a: 1 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+!!map &anchor {a: 1}                                                            |
+                                                                                |
+=====================================output=====================================
+!!map &anchor { a: 1 }                                                          |
+                                                                                |
+================================================================================
 `;
 
 exports[`props.yml - yaml-verify 3`] = `
-!!map &anchor {a: 1}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!map &anchor {a: 1}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!map &anchor {a: 1}                                                            |
+                                                                                |
+=====================================output=====================================
+!!map &anchor {a: 1}                                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`props-in-map.yml - yaml-verify 1`] = `
-a: !!map &anchor {a: 1}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-a: !!map &anchor { a: 1 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+a: !!map &anchor {a: 1}                                                         |
+                                                                                |
+=====================================output=====================================
+a: !!map &anchor { a: 1 }                                                       |
+                                                                                |
+================================================================================
 `;
 
 exports[`props-in-map.yml - yaml-verify 2`] = `
-a: !!map &anchor {a: 1}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-a: !!map &anchor { a: 1 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+a: !!map &anchor {a: 1}                                                         |
+                                                                                |
+=====================================output=====================================
+a: !!map &anchor { a: 1 }                                                       |
+                                                                                |
+================================================================================
 `;
 
 exports[`props-in-map.yml - yaml-verify 3`] = `
-a: !!map &anchor {a: 1}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-a: !!map &anchor {a: 1}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+a: !!map &anchor {a: 1}                                                         |
+                                                                                |
+=====================================output=====================================
+a: !!map &anchor {a: 1}                                                         |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-key.yml - yaml-verify 1`] = `
-{? 1,? 2,? 3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1, 2, 3 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{? 1,? 2,? 3}                                                                   |
+                                                                                |
+=====================================output=====================================
+{ 1, 2, 3 }                                                                     |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-key.yml - yaml-verify 2`] = `
-{? 1,? 2,? 3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1, 2, 3 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{? 1,? 2,? 3}                                                                   |
+                                                                                |
+=====================================output=====================================
+{ 1, 2, 3 }                                                                     |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-key.yml - yaml-verify 3`] = `
-{? 1,? 2,? 3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{1, 2, 3}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{? 1,? 2,? 3}                                                                   |
+                                                                                |
+=====================================output=====================================
+{1, 2, 3}                                                                       |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-key-short-value.yml - yaml-verify 1`] = `
-{1: a,2: b,3: c}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1: a, 2: b, 3: c }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1: a,2: b,3: c}                                                                |
+                                                                                |
+=====================================output=====================================
+{ 1: a, 2: b, 3: c }                                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-key-short-value.yml - yaml-verify 2`] = `
-{1: a,2: b,3: c}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1: a, 2: b, 3: c }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{1: a,2: b,3: c}                                                                |
+                                                                                |
+=====================================output=====================================
+{ 1: a, 2: b, 3: c }                                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-key-short-value.yml - yaml-verify 3`] = `
-{1: a,2: b,3: c}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{1: a, 2: b, 3: c}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1: a,2: b,3: c}                                                                |
+                                                                                |
+=====================================output=====================================
+{1: a, 2: b, 3: c}                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-plain.yml - yaml-verify 1`] = `
-{1,2,3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1, 2, 3 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1,2,3}                                                                         |
+                                                                                |
+=====================================output=====================================
+{ 1, 2, 3 }                                                                     |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-plain.yml - yaml-verify 2`] = `
-{1,2,3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1, 2, 3 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{1,2,3}                                                                         |
+                                                                                |
+=====================================output=====================================
+{ 1, 2, 3 }                                                                     |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-plain.yml - yaml-verify 3`] = `
-{1,2,3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{1, 2, 3}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1,2,3}                                                                         |
+                                                                                |
+=====================================output=====================================
+{1, 2, 3}                                                                       |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-value.yml - yaml-verify 1`] = `
-{1: 1,2: 2,3: 3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1: 1, 2: 2, 3: 3 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1: 1,2: 2,3: 3}                                                                |
+                                                                                |
+=====================================output=====================================
+{ 1: 1, 2: 2, 3: 3 }                                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-value.yml - yaml-verify 2`] = `
-{1: 1,2: 2,3: 3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{ 1: 1, 2: 2, 3: 3 }
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{1: 1,2: 2,3: 3}                                                                |
+                                                                                |
+=====================================output=====================================
+{ 1: 1, 2: 2, 3: 3 }                                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`short-value.yml - yaml-verify 3`] = `
-{1: 1,2: 2,3: 3}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{1: 1, 2: 2, 3: 3}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{1: 1,2: 2,3: 3}                                                                |
+                                                                                |
+=====================================output=====================================
+{1: 1, 2: 2, 3: 3}                                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`very-long-value.yml - yaml-verify 1`] = `
-{
-x: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  x: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+x: 12345678901234567890123456789012345678901234567890123456789012345678901234567|890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  x: 123456789012345678901234567890123456789012345678901234567890123456789012345|67890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890,
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`very-long-value.yml - yaml-verify 2`] = `
-{
-x: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-    x: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890,
-}
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+tabWidth: 4
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+x: 12345678901234567890123456789012345678901234567890123456789012345678901234567|890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+    x: 1234567890123456789012345678901234567890123456789012345678901234567890123|4567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890,
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`very-long-value.yml - yaml-verify 3`] = `
-{
-x: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  x: 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890,
-}
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+x: 12345678901234567890123456789012345678901234567890123456789012345678901234567|890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  x: 123456789012345678901234567890123456789012345678901234567890123456789012345|67890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890,
+}                                                                               |
+                                                                                |
+================================================================================
 `;

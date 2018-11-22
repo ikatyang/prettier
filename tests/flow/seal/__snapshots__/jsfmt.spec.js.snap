@@ -1,37 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`imp.js - flow-verify 1`] = `
-/* @flow */
-
-var imp = require('./obj_annot');
-imp({ name: "imp" });
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* @flow */
-
-var imp = require("./obj_annot");
-imp({ name: "imp" });
-
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */                                                                     |
+                                                                                |
+var imp = require('./obj_annot');                                               |
+imp({ name: "imp" });                                                           |
+                                                                                |
+=====================================output=====================================
+/* @flow */                                                                     |
+                                                                                |
+var imp = require("./obj_annot");                                               |
+imp({ name: "imp" });                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`obj_annot.js - flow-verify 1`] = `
-/* @flow */
-
-function foo(param: { name: string; }): number {
-    return param.id;
-}
-
-foo({ name: "test" });
-
-module.exports = foo;
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* @flow */
-
-function foo(param: { name: string }): number {
-  return param.id;
-}
-
-foo({ name: "test" });
-
-module.exports = foo;
-
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */                                                                     |
+                                                                                |
+function foo(param: { name: string; }): number {                                |
+    return param.id;                                                            |
+}                                                                               |
+                                                                                |
+foo({ name: "test" });                                                          |
+                                                                                |
+module.exports = foo;                                                           |
+                                                                                |
+=====================================output=====================================
+/* @flow */                                                                     |
+                                                                                |
+function foo(param: { name: string }): number {                                 |
+  return param.id;                                                              |
+}                                                                               |
+                                                                                |
+foo({ name: "test" });                                                          |
+                                                                                |
+module.exports = foo;                                                           |
+                                                                                |
+================================================================================
 `;

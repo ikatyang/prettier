@@ -1,43 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`nested-2.css - css-verify 1`] = `
-.btn {&:hover {
-    color: red;
-  }&:active {
-color:blue;}  &:nth-child(5n+1) {
-    color:blue;
-  }
-  &:nth-child(-n+3) { color: green;}
-> li > a {   color: red}  >li>li {
-  color: blue;
-  }
-> p + p {
-    color: green;
-  }
-  }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.btn {
-  &:hover {
-    color: red;
-  }
-  &:active {
-    color: blue;
-  }
-  &:nth-child(5n + 1) {
-    color: blue;
-  }
-  &:nth-child(-n + 3) {
-    color: green;
-  }
-  > li > a {
-    color: red;
-  }
-  > li > li {
-    color: blue;
-  }
-  > p + p {
-    color: green;
-  }
-}
-
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+.btn {&:hover {                                                                 |
+    color: red;                                                                 |
+  }&:active {                                                                   |
+color:blue;}  &:nth-child(5n+1) {                                               |
+    color:blue;                                                                 |
+  }                                                                             |
+  &:nth-child(-n+3) { color: green;}                                            |
+> li > a {   color: red}  >li>li {                                              |
+  color: blue;                                                                  |
+  }                                                                             |
+> p + p {                                                                       |
+    color: green;                                                               |
+  }                                                                             |
+  }                                                                             |
+                                                                                |
+=====================================output=====================================
+.btn {                                                                          |
+  &:hover {                                                                     |
+    color: red;                                                                 |
+  }                                                                             |
+  &:active {                                                                    |
+    color: blue;                                                                |
+  }                                                                             |
+  &:nth-child(5n + 1) {                                                         |
+    color: blue;                                                                |
+  }                                                                             |
+  &:nth-child(-n + 3) {                                                         |
+    color: green;                                                               |
+  }                                                                             |
+  > li > a {                                                                    |
+    color: red;                                                                 |
+  }                                                                             |
+  > li > li {                                                                   |
+    color: blue;                                                                |
+  }                                                                             |
+  > p + p {                                                                     |
+    color: green;                                                               |
+  }                                                                             |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

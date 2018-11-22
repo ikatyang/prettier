@@ -1,298 +1,436 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`force-singleline-in-mapping-value.yml - yaml-verify 1`] = `
-no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
-
-whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
-
-literal-newline: longlonglonglonglonglonglonglonglonglonglong
-  longlonglonglonglonglonglonglonglonglonglong
-
-newline: longlonglonglonglonglonglonglonglonglonglong
-
-  longlonglonglonglonglonglonglonglonglonglong
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
-
-whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
-
-literal-newline: longlonglonglonglonglonglonglonglonglonglong
-  longlonglonglonglonglonglonglonglonglonglong
-
-newline: longlonglonglonglonglonglonglonglonglonglong
-
-  longlonglonglonglonglonglonglonglonglonglong
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglongl|onglong
+                                                                                |
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglon|glonglonglonglonglong
+                                                                                |
+literal-newline: longlonglonglonglonglonglonglonglonglonglong                   |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+newline: longlonglonglonglonglonglonglonglonglonglong                           |
+                                                                                |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+=====================================output=====================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglongl|onglong
+                                                                                |
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglon|glonglonglonglonglong
+                                                                                |
+literal-newline: longlonglonglonglonglonglonglonglonglonglong                   |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+newline: longlonglonglonglonglonglonglonglonglonglong                           |
+                                                                                |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+================================================================================
 `;
 
 exports[`force-singleline-in-mapping-value.yml - yaml-verify 2`] = `
-no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
-
-whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
-
-literal-newline: longlonglonglonglonglonglonglonglonglonglong
-  longlonglonglonglonglonglonglonglonglonglong
-
-newline: longlonglonglonglonglonglonglonglonglonglong
-
-  longlonglonglonglonglonglonglonglonglonglong
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
-
-whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
-
-literal-newline: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
-
-newline: longlonglonglonglonglonglonglonglonglonglong
-
-  longlonglonglonglonglonglonglonglonglonglong
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglongl|onglong
+                                                                                |
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglon|glonglonglonglonglong
+                                                                                |
+literal-newline: longlonglonglonglonglonglonglonglonglonglong                   |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+newline: longlonglonglonglonglonglonglonglonglonglong                           |
+                                                                                |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+=====================================output=====================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglongl|onglong
+                                                                                |
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglon|glonglonglonglonglong
+                                                                                |
+literal-newline: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglo|nglonglonglonglonglonglong
+                                                                                |
+newline: longlonglonglonglonglonglonglonglonglonglong                           |
+                                                                                |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+================================================================================
 `;
 
 exports[`force-singleline-in-mapping-value.yml - yaml-verify 3`] = `
-no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
-
-whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
-
-literal-newline: longlonglonglonglonglonglonglonglonglonglong
-  longlonglonglonglonglonglonglonglonglonglong
-
-newline: longlonglonglonglonglonglonglonglonglonglong
-
-  longlonglonglonglonglonglonglonglonglonglong
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
-
-whitespace:
-  longlonglonglonglonglonglonglonglonglonglong
-  longlonglonglonglonglonglonglonglonglonglong
-
-literal-newline:
-  longlonglonglonglonglonglonglonglonglonglong
-  longlonglonglonglonglonglonglonglonglonglong
-
-newline: longlonglonglonglonglonglonglonglonglonglong
-
-  longlonglonglonglonglonglonglonglonglonglong
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglongl|onglong
+                                                                                |
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglon|glonglonglonglonglong
+                                                                                |
+literal-newline: longlonglonglonglonglonglonglonglonglonglong                   |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+newline: longlonglonglonglonglonglonglonglonglonglong                           |
+                                                                                |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+=====================================output=====================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglongl|onglong
+                                                                                |
+whitespace:                                                                     |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+literal-newline:                                                                |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+newline: longlonglonglonglonglonglonglonglonglonglong                           |
+                                                                                |
+  longlonglonglonglonglonglonglonglonglonglong                                  |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comment.yml - yaml-verify 1`] = `
-!!str # comment
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!str # comment
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment                                                                 |
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+!!str # comment                                                                 |
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comment.yml - yaml-verify 2`] = `
-!!str # comment
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!str # comment
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment                                                                 |
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+!!str # comment                                                                 |
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comment.yml - yaml-verify 3`] = `
-!!str # comment
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!str # comment
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment                                                                 |
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+!!str # comment                                                                 |
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comments.yml - yaml-verify 1`] = `
-!!str # comment 1
-# comment 2
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!str
-# comment 1
-# comment 2
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment 1                                                               |
+# comment 2                                                                     |
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+!!str                                                                           |
+# comment 1                                                                     |
+# comment 2                                                                     |
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comments.yml - yaml-verify 2`] = `
-!!str # comment 1
-# comment 2
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!str
-# comment 1
-# comment 2
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment 1                                                               |
+# comment 2                                                                     |
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+!!str                                                                           |
+# comment 1                                                                     |
+# comment 2                                                                     |
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`middle-comments.yml - yaml-verify 3`] = `
-!!str # comment 1
-# comment 2
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!str
-# comment 1
-# comment 2
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment 1                                                               |
+# comment 2                                                                     |
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+!!str                                                                           |
+# comment 1                                                                     |
+# comment 2                                                                     |
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`multiline.yml - yaml-verify 1`] = `
-b:    
-  123123123123123123123123123   
-       123123123123123123123123123   
-         123123123123123123123123123				
-    123123123123123123123123123   
-      123123123123123123123123123   
-  123123123123123123123123123   
-            123123123123123123123123123				
-         
-         123123123123123123123123123   
-         
-         
-         123123123123123123123123123      
-         
-         
-         
-         
-         123123123123123123123123123  
-    
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-b: 123123123123123123123123123
-  123123123123123123123123123
-  123123123123123123123123123
-  123123123123123123123123123
-  123123123123123123123123123
-  123123123123123123123123123
-  123123123123123123123123123
-
-  123123123123123123123123123
-
-
-  123123123123123123123123123
-
-
-
-
-  123123123123123123123123123
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+b:                                                                              |
+  123123123123123123123123123                                                   |
+       123123123123123123123123123                                              |
+         123123123123123123123123123				                                        |
+    123123123123123123123123123                                                 |
+      123123123123123123123123123                                               |
+  123123123123123123123123123                                                   |
+            123123123123123123123123123				                                     |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+                                                                                |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+=====================================output=====================================
+b: 123123123123123123123123123                                                  |
+  123123123123123123123123123                                                   |
+  123123123123123123123123123                                                   |
+  123123123123123123123123123                                                   |
+  123123123123123123123123123                                                   |
+  123123123123123123123123123                                                   |
+  123123123123123123123123123                                                   |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+                                                                                |
+                                                                                |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+================================================================================
 `;
 
 exports[`multiline.yml - yaml-verify 2`] = `
-b:    
-  123123123123123123123123123   
-       123123123123123123123123123   
-         123123123123123123123123123				
-    123123123123123123123123123   
-      123123123123123123123123123   
-  123123123123123123123123123   
-            123123123123123123123123123				
-         
-         123123123123123123123123123   
-         
-         
-         123123123123123123123123123      
-         
-         
-         
-         
-         123123123123123123123123123  
-    
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-b:
-  123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123
-
-  123123123123123123123123123
-
-
-  123123123123123123123123123
-
-
-
-
-  123123123123123123123123123
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+b:                                                                              |
+  123123123123123123123123123                                                   |
+       123123123123123123123123123                                              |
+         123123123123123123123123123				                                        |
+    123123123123123123123123123                                                 |
+      123123123123123123123123123                                               |
+  123123123123123123123123123                                                   |
+            123123123123123123123123123				                                     |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+                                                                                |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+=====================================output=====================================
+b:                                                                              |
+  123123123123123123123123123 123123123123123123123123123 1231231231231231231231|23123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+                                                                                |
+                                                                                |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+================================================================================
 `;
 
 exports[`multiline.yml - yaml-verify 3`] = `
-b:    
-  123123123123123123123123123   
-       123123123123123123123123123   
-         123123123123123123123123123				
-    123123123123123123123123123   
-      123123123123123123123123123   
-  123123123123123123123123123   
-            123123123123123123123123123				
-         
-         123123123123123123123123123   
-         
-         
-         123123123123123123123123123      
-         
-         
-         
-         
-         123123123123123123123123123  
-    
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-b: 123123123123123123123123123 123123123123123123123123123
-  123123123123123123123123123 123123123123123123123123123
-  123123123123123123123123123 123123123123123123123123123
-  123123123123123123123123123
-
-  123123123123123123123123123
-
-
-  123123123123123123123123123
-
-
-
-
-  123123123123123123123123123
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+b:                                                                              |
+  123123123123123123123123123                                                   |
+       123123123123123123123123123                                              |
+         123123123123123123123123123				                                        |
+    123123123123123123123123123                                                 |
+      123123123123123123123123123                                               |
+  123123123123123123123123123                                                   |
+            123123123123123123123123123				                                     |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+                                                                                |
+                                                                                |
+         123123123123123123123123123                                            |
+                                                                                |
+                                                                                |
+=====================================output=====================================
+b: 123123123123123123123123123 123123123123123123123123123                      |
+  123123123123123123123123123 123123123123123123123123123                       |
+  123123123123123123123123123 123123123123123123123123123                       |
+  123123123123123123123123123                                                   |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+                                                                                |
+                                                                                |
+                                                                                |
+  123123123123123123123123123                                                   |
+                                                                                |
+================================================================================
 `;
 
 exports[`true.yml - yaml-verify 1`] = `
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`true.yml - yaml-verify 2`] = `
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`true.yml - yaml-verify 3`] = `
-hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+hello                                                                           |
+                                                                                |
+=====================================output=====================================
+hello                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`verbatim.yml - yaml-verify 1`] = `
-!<hello> hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!<hello> hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!<hello> hello                                                                  |
+                                                                                |
+=====================================output=====================================
+!<hello> hello                                                                  |
+                                                                                |
+================================================================================
 `;
 
 exports[`verbatim.yml - yaml-verify 2`] = `
-!<hello> hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!<hello> hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+!<hello> hello                                                                  |
+                                                                                |
+=====================================output=====================================
+!<hello> hello                                                                  |
+                                                                                |
+================================================================================
 `;
 
 exports[`verbatim.yml - yaml-verify 3`] = `
-!<hello> hello
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!<hello> hello
-
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+!<hello> hello                                                                  |
+                                                                                |
+=====================================output=====================================
+!<hello> hello                                                                  |
+                                                                                |
+================================================================================
 `;

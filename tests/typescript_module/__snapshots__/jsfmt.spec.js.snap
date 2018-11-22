@@ -1,40 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`empty.js - typescript-verify 1`] = `
-declare module 'autoprefixer';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare module "autoprefixer";
-
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module 'autoprefixer';                                                  |
+                                                                                |
+=====================================output=====================================
+declare module "autoprefixer";                                                  |
+                                                                                |
+================================================================================
 `;
 
 exports[`global.js - typescript-verify 1`] = `
-namespace global {}
-module global {}
-global {}
-declare global {}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-namespace global {
-
-}
-namespace global {
-
-}
-global {
-
-}
-declare global {
-
-}
-
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+namespace global {}                                                             |
+module global {}                                                                |
+global {}                                                                       |
+declare global {}                                                               |
+                                                                                |
+=====================================output=====================================
+namespace global {                                                              |
+                                                                                |
+}                                                                               |
+namespace global {                                                              |
+                                                                                |
+}                                                                               |
+global {                                                                        |
+                                                                                |
+}                                                                               |
+declare global {                                                                |
+                                                                                |
+}                                                                               |
+                                                                                |
+================================================================================
 `;
 
 exports[`namespace_function.ts - typescript-verify 1`] = `
-namespace X {
-    declare function f();
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-namespace X {
-  declare function f();
-}
-
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+namespace X {                                                                   |
+    declare function f();                                                       |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+namespace X {                                                                   |
+  declare function f();                                                         |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

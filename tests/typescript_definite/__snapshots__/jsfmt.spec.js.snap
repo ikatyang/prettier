@@ -1,20 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`definite.ts - typescript-verify 1`] = `
-class MyComponent {
-ngModel!: ng.INgModelController;
-}
-
-const x!: string
-
-var y!: MyComponent
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class MyComponent {
-  ngModel!: ng.INgModelController;
-}
-
-const x!: string;
-
-var y!: MyComponent;
-
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class MyComponent {                                                             |
+ngModel!: ng.INgModelController;                                                |
+}                                                                               |
+                                                                                |
+const x!: string                                                                |
+                                                                                |
+var y!: MyComponent                                                             |
+                                                                                |
+=====================================output=====================================
+class MyComponent {                                                             |
+  ngModel!: ng.INgModelController;                                              |
+}                                                                               |
+                                                                                |
+const x!: string;                                                               |
+                                                                                |
+var y!: MyComponent;                                                            |
+                                                                                |
+================================================================================
 `;

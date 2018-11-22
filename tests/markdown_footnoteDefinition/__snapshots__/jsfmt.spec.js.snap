@@ -1,394 +1,490 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`long.md - markdown-verify 1`] = `
-[^hello]: this is a long long long long long long long long long long long long long paragraph.
-[^world]: this is a long long long long long long long long long long long long long paragraph.
-          this is a long long long long long long long long long long long long long paragraph.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^hello]:
-
-  this is a long long long long long long long long long long long long long
-  paragraph.
-
-[^world]:
-
-  this is a long long long long long long long long long long long long long
-  paragraph. this is a long long long long long long long long long long long
-  long long paragraph.
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+[^hello]: this is a long long long long long long long long long long long long |long paragraph.
+[^world]: this is a long long long long long long long long long long long long |long paragraph.
+          this is a long long long long long long long long long long long long |long paragraph.
+                                                                                |
+=====================================output=====================================
+[^hello]:                                                                       |
+                                                                                |
+  this is a long long long long long long long long long long long long long    |
+  paragraph.                                                                    |
+                                                                                |
+[^world]:                                                                       |
+                                                                                |
+  this is a long long long long long long long long long long long long long    |
+  paragraph. this is a long long long long long long long long long long long   |
+  long long paragraph.                                                          |
+                                                                                |
+================================================================================
 `;
 
 exports[`long.md - markdown-verify 2`] = `
-[^hello]: this is a long long long long long long long long long long long long long paragraph.
-[^world]: this is a long long long long long long long long long long long long long paragraph.
-          this is a long long long long long long long long long long long long long paragraph.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^hello]: this is a long long long long long long long long long long long long long paragraph.
-[^world]: this is a long long long long long long long long long long long long long paragraph. this is a long long long long long long long long long long long long long paragraph.
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+[^hello]: this is a long long long long long long long long long long long long |long paragraph.
+[^world]: this is a long long long long long long long long long long long long |long paragraph.
+          this is a long long long long long long long long long long long long |long paragraph.
+                                                                                |
+=====================================output=====================================
+[^hello]: this is a long long long long long long long long long long long long |long paragraph.
+[^world]: this is a long long long long long long long long long long long long |long paragraph. this is a long long long long long long long long long long long long long paragraph.
+                                                                                |
+================================================================================
 `;
 
 exports[`long.md - markdown-verify 3`] = `
-[^hello]: this is a long long long long long long long long long long long long long paragraph.
-[^world]: this is a long long long long long long long long long long long long long paragraph.
-          this is a long long long long long long long long long long long long long paragraph.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^hello]: this is a long long long long long long long long long long long long long paragraph.
-[^world]:
-
-  this is a long long long long long long long long long long long long long paragraph.
-  this is a long long long long long long long long long long long long long paragraph.
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "preserve"
+                                                                                | printWidth
+=====================================input======================================
+[^hello]: this is a long long long long long long long long long long long long |long paragraph.
+[^world]: this is a long long long long long long long long long long long long |long paragraph.
+          this is a long long long long long long long long long long long long |long paragraph.
+                                                                                |
+=====================================output=====================================
+[^hello]: this is a long long long long long long long long long long long long |long paragraph.
+[^world]:                                                                       |
+                                                                                |
+  this is a long long long long long long long long long long long long long par|agraph.
+  this is a long long long long long long long long long long long long long par|agraph.
+                                                                                |
+================================================================================
 `;
 
 exports[`multiline.md - markdown-verify 1`] = `
-[^fn1]:
-
-    > \`\`\`rs
-    > fn main() {
-    >     println!("this is some Rust!");
-    > }
-    > \`\`\`
-
-[^fn2]: Here is a footnote which includes code.
-
-    \`\`\`rs
-    fn main() {
-        println!("this is some Rust!");
-    }
-    \`\`\`
-
-[^fn2]: Here is a footnote which includes code. Here is a footnote which includes code. Here is a footnote which includes code.
-
-    \`\`\`rs
-    fn main() {
-        println!("this is some Rust!");
-    }
-    \`\`\`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^fn1]:
-
-  > \`\`\`rs
-  > fn main() {
-  >     println!("this is some Rust!");
-  > }
-  > \`\`\`
-
-[^fn2]: Here is a footnote which includes code.
-
-  \`\`\`rs
-  fn main() {
-      println!("this is some Rust!");
-  }
-  \`\`\`
-
-[^fn2]:
-
-  Here is a footnote which includes code. Here is a footnote which includes
-  code. Here is a footnote which includes code.
-
-  \`\`\`rs
-  fn main() {
-      println!("this is some Rust!");
-  }
-  \`\`\`
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+[^fn1]:                                                                         |
+                                                                                |
+    > \`\`\`rs                                                                     |
+    > fn main() {                                                               |
+    >     println!("this is some Rust!");                                       |
+    > }                                                                         |
+    > \`\`\`                                                                       |
+                                                                                |
+[^fn2]: Here is a footnote which includes code.                                 |
+                                                                                |
+    \`\`\`rs                                                                       |
+    fn main() {                                                                 |
+        println!("this is some Rust!");                                         |
+    }                                                                           |
+    \`\`\`                                                                         |
+                                                                                |
+[^fn2]: Here is a footnote which includes code. Here is a footnote which include|s code. Here is a footnote which includes code.
+                                                                                |
+    \`\`\`rs                                                                       |
+    fn main() {                                                                 |
+        println!("this is some Rust!");                                         |
+    }                                                                           |
+    \`\`\`                                                                         |
+                                                                                |
+=====================================output=====================================
+[^fn1]:                                                                         |
+                                                                                |
+  > \`\`\`rs                                                                       |
+  > fn main() {                                                                 |
+  >     println!("this is some Rust!");                                         |
+  > }                                                                           |
+  > \`\`\`                                                                         |
+                                                                                |
+[^fn2]: Here is a footnote which includes code.                                 |
+                                                                                |
+  \`\`\`rs                                                                         |
+  fn main() {                                                                   |
+      println!("this is some Rust!");                                           |
+  }                                                                             |
+  \`\`\`                                                                           |
+                                                                                |
+[^fn2]:                                                                         |
+                                                                                |
+  Here is a footnote which includes code. Here is a footnote which includes     |
+  code. Here is a footnote which includes code.                                 |
+                                                                                |
+  \`\`\`rs                                                                         |
+  fn main() {                                                                   |
+      println!("this is some Rust!");                                           |
+  }                                                                             |
+  \`\`\`                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`multiline.md - markdown-verify 2`] = `
-[^fn1]:
-
-    > \`\`\`rs
-    > fn main() {
-    >     println!("this is some Rust!");
-    > }
-    > \`\`\`
-
-[^fn2]: Here is a footnote which includes code.
-
-    \`\`\`rs
-    fn main() {
-        println!("this is some Rust!");
-    }
-    \`\`\`
-
-[^fn2]: Here is a footnote which includes code. Here is a footnote which includes code. Here is a footnote which includes code.
-
-    \`\`\`rs
-    fn main() {
-        println!("this is some Rust!");
-    }
-    \`\`\`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^fn1]:
-
-  > \`\`\`rs
-  > fn main() {
-  >     println!("this is some Rust!");
-  > }
-  > \`\`\`
-
-[^fn2]: Here is a footnote which includes code.
-
-  \`\`\`rs
-  fn main() {
-      println!("this is some Rust!");
-  }
-  \`\`\`
-
-[^fn2]:
-
-  Here is a footnote which includes code. Here is a footnote which includes code. Here is a footnote which includes code.
-
-  \`\`\`rs
-  fn main() {
-      println!("this is some Rust!");
-  }
-  \`\`\`
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+[^fn1]:                                                                         |
+                                                                                |
+    > \`\`\`rs                                                                     |
+    > fn main() {                                                               |
+    >     println!("this is some Rust!");                                       |
+    > }                                                                         |
+    > \`\`\`                                                                       |
+                                                                                |
+[^fn2]: Here is a footnote which includes code.                                 |
+                                                                                |
+    \`\`\`rs                                                                       |
+    fn main() {                                                                 |
+        println!("this is some Rust!");                                         |
+    }                                                                           |
+    \`\`\`                                                                         |
+                                                                                |
+[^fn2]: Here is a footnote which includes code. Here is a footnote which include|s code. Here is a footnote which includes code.
+                                                                                |
+    \`\`\`rs                                                                       |
+    fn main() {                                                                 |
+        println!("this is some Rust!");                                         |
+    }                                                                           |
+    \`\`\`                                                                         |
+                                                                                |
+=====================================output=====================================
+[^fn1]:                                                                         |
+                                                                                |
+  > \`\`\`rs                                                                       |
+  > fn main() {                                                                 |
+  >     println!("this is some Rust!");                                         |
+  > }                                                                           |
+  > \`\`\`                                                                         |
+                                                                                |
+[^fn2]: Here is a footnote which includes code.                                 |
+                                                                                |
+  \`\`\`rs                                                                         |
+  fn main() {                                                                   |
+      println!("this is some Rust!");                                           |
+  }                                                                             |
+  \`\`\`                                                                           |
+                                                                                |
+[^fn2]:                                                                         |
+                                                                                |
+  Here is a footnote which includes code. Here is a footnote which includes code|. Here is a footnote which includes code.
+                                                                                |
+  \`\`\`rs                                                                         |
+  fn main() {                                                                   |
+      println!("this is some Rust!");                                           |
+  }                                                                             |
+  \`\`\`                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`multiline.md - markdown-verify 3`] = `
-[^fn1]:
-
-    > \`\`\`rs
-    > fn main() {
-    >     println!("this is some Rust!");
-    > }
-    > \`\`\`
-
-[^fn2]: Here is a footnote which includes code.
-
-    \`\`\`rs
-    fn main() {
-        println!("this is some Rust!");
-    }
-    \`\`\`
-
-[^fn2]: Here is a footnote which includes code. Here is a footnote which includes code. Here is a footnote which includes code.
-
-    \`\`\`rs
-    fn main() {
-        println!("this is some Rust!");
-    }
-    \`\`\`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^fn1]:
-
-  > \`\`\`rs
-  > fn main() {
-  >     println!("this is some Rust!");
-  > }
-  > \`\`\`
-
-[^fn2]: Here is a footnote which includes code.
-
-  \`\`\`rs
-  fn main() {
-      println!("this is some Rust!");
-  }
-  \`\`\`
-
-[^fn2]:
-
-  Here is a footnote which includes code. Here is a footnote which includes code. Here is a footnote which includes code.
-
-  \`\`\`rs
-  fn main() {
-      println!("this is some Rust!");
-  }
-  \`\`\`
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "preserve"
+                                                                                | printWidth
+=====================================input======================================
+[^fn1]:                                                                         |
+                                                                                |
+    > \`\`\`rs                                                                     |
+    > fn main() {                                                               |
+    >     println!("this is some Rust!");                                       |
+    > }                                                                         |
+    > \`\`\`                                                                       |
+                                                                                |
+[^fn2]: Here is a footnote which includes code.                                 |
+                                                                                |
+    \`\`\`rs                                                                       |
+    fn main() {                                                                 |
+        println!("this is some Rust!");                                         |
+    }                                                                           |
+    \`\`\`                                                                         |
+                                                                                |
+[^fn2]: Here is a footnote which includes code. Here is a footnote which include|s code. Here is a footnote which includes code.
+                                                                                |
+    \`\`\`rs                                                                       |
+    fn main() {                                                                 |
+        println!("this is some Rust!");                                         |
+    }                                                                           |
+    \`\`\`                                                                         |
+                                                                                |
+=====================================output=====================================
+[^fn1]:                                                                         |
+                                                                                |
+  > \`\`\`rs                                                                       |
+  > fn main() {                                                                 |
+  >     println!("this is some Rust!");                                         |
+  > }                                                                           |
+  > \`\`\`                                                                         |
+                                                                                |
+[^fn2]: Here is a footnote which includes code.                                 |
+                                                                                |
+  \`\`\`rs                                                                         |
+  fn main() {                                                                   |
+      println!("this is some Rust!");                                           |
+  }                                                                             |
+  \`\`\`                                                                           |
+                                                                                |
+[^fn2]:                                                                         |
+                                                                                |
+  Here is a footnote which includes code. Here is a footnote which includes code|. Here is a footnote which includes code.
+                                                                                |
+  \`\`\`rs                                                                         |
+  fn main() {                                                                   |
+      println!("this is some Rust!");                                           |
+  }                                                                             |
+  \`\`\`                                                                           |
+                                                                                |
+================================================================================
 `;
 
 exports[`sibling.md - markdown-verify 1`] = `
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: a
-[^a]: a
-
----
-
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123\\
-      > 456
-[^a]: a
-[^a]: > 123\\
-      > 456
-[^a]: a
-[^a]: a
-[^a]: a
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: a
-[^a]: a
-
----
-
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]:
-
-  > 123\\
-  > 456
-
-[^a]: a
-[^a]:
-
-  > 123\\
-  > 456
-
-[^a]: a
-[^a]: a
-[^a]: a
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+---                                                                             |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123\\                                                                    |
+      > 456                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123\\                                                                    |
+      > 456                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+=====================================output=====================================
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+---                                                                             |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]:                                                                           |
+                                                                                |
+  > 123\\                                                                        |
+  > 456                                                                         |
+                                                                                |
+[^a]: a                                                                         |
+[^a]:                                                                           |
+                                                                                |
+  > 123\\                                                                        |
+  > 456                                                                         |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+================================================================================
 `;
 
 exports[`sibling.md - markdown-verify 2`] = `
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: a
-[^a]: a
-
----
-
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123\\
-      > 456
-[^a]: a
-[^a]: > 123\\
-      > 456
-[^a]: a
-[^a]: a
-[^a]: a
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: a
-[^a]: a
-
----
-
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]:
-
-  > 123\\
-  > 456
-
-[^a]: a
-[^a]:
-
-  > 123\\
-  > 456
-
-[^a]: a
-[^a]: a
-[^a]: a
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+---                                                                             |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123\\                                                                    |
+      > 456                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123\\                                                                    |
+      > 456                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+=====================================output=====================================
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+---                                                                             |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]:                                                                           |
+                                                                                |
+  > 123\\                                                                        |
+  > 456                                                                         |
+                                                                                |
+[^a]: a                                                                         |
+[^a]:                                                                           |
+                                                                                |
+  > 123\\                                                                        |
+  > 456                                                                         |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+================================================================================
 `;
 
 exports[`sibling.md - markdown-verify 3`] = `
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: a
-[^a]: a
-
----
-
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123\\
-      > 456
-[^a]: a
-[^a]: > 123\\
-      > 456
-[^a]: a
-[^a]: a
-[^a]: a
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: > 123
-[^a]: a
-[^a]: a
-[^a]: a
-
----
-
-[^a]: a
-[^a]: a
-[^a]: a
-[^a]:
-
-  > 123\\
-  > 456
-
-[^a]: a
-[^a]:
-
-  > 123\\
-  > 456
-
-[^a]: a
-[^a]: a
-[^a]: a
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "preserve"
+                                                                                | printWidth
+=====================================input======================================
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+---                                                                             |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123\\                                                                    |
+      > 456                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123\\                                                                    |
+      > 456                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+=====================================output=====================================
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: > 123                                                                     |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+---                                                                             |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]:                                                                           |
+                                                                                |
+  > 123\\                                                                        |
+  > 456                                                                         |
+                                                                                |
+[^a]: a                                                                         |
+[^a]:                                                                           |
+                                                                                |
+  > 123\\                                                                        |
+  > 456                                                                         |
+                                                                                |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+[^a]: a                                                                         |
+                                                                                |
+================================================================================
 `;
 
 exports[`simple.md - markdown-verify 1`] = `
-[^hello]: world
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^hello]: world
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+[^hello]: world                                                                 |
+                                                                                |
+=====================================output=====================================
+[^hello]: world                                                                 |
+                                                                                |
+================================================================================
 `;
 
 exports[`simple.md - markdown-verify 2`] = `
-[^hello]: world
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^hello]: world
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+[^hello]: world                                                                 |
+                                                                                |
+=====================================output=====================================
+[^hello]: world                                                                 |
+                                                                                |
+================================================================================
 `;
 
 exports[`simple.md - markdown-verify 3`] = `
-[^hello]: world
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[^hello]: world
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "preserve"
+                                                                                | printWidth
+=====================================input======================================
+[^hello]: world                                                                 |
+                                                                                |
+=====================================output=====================================
+[^hello]: world                                                                 |
+                                                                                |
+================================================================================
 `;

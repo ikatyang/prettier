@@ -1,31 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`shadow.js - flow-verify 1`] = `
-var o = {};
-(o.p: string);
-(o: $Shape<{p:string}>);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-var o = {};
-(o.p: string);
-(o: $Shape<{ p: string }>);
-
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var o = {};                                                                     |
+(o.p: string);                                                                  |
+(o: $Shape<{p:string}>);                                                        |
+                                                                                |
+=====================================output=====================================
+var o = {};                                                                     |
+(o.p: string);                                                                  |
+(o: $Shape<{ p: string }>);                                                     |
+                                                                                |
+================================================================================
 `;
 
 exports[`test.js - flow-verify 1`] = `
-type Foo = {
-  field: number,
-}
-
-var x: {field?: number} = {};
-var y: $Shape<Foo> = x;
-(y.field: number)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-type Foo = {
-  field: number
-};
-
-var x: { field?: number } = {};
-var y: $Shape<Foo> = x;
-(y.field: number);
-
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Foo = {                                                                    |
+  field: number,                                                                |
+}                                                                               |
+                                                                                |
+var x: {field?: number} = {};                                                   |
+var y: $Shape<Foo> = x;                                                         |
+(y.field: number)                                                               |
+                                                                                |
+=====================================output=====================================
+type Foo = {                                                                    |
+  field: number                                                                 |
+};                                                                              |
+                                                                                |
+var x: { field?: number } = {};                                                 |
+var y: $Shape<Foo> = x;                                                         |
+(y.field: number);                                                              |
+                                                                                |
+================================================================================
 `;

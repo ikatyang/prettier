@@ -1,22 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`b0.js - flow-verify 1`] = `
-// @flow
-
-class C { x: C; }
-class E extends C { x: C; }
-
-module.exports = { C, E };
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// @flow
-
-class C {
-  x: C;
-}
-class E extends C {
-  x: C;
-}
-
-module.exports = { C, E };
-
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow                                                                        |
+                                                                                |
+class C { x: C; }                                                               |
+class E extends C { x: C; }                                                     |
+                                                                                |
+module.exports = { C, E };                                                      |
+                                                                                |
+=====================================output=====================================
+// @flow                                                                        |
+                                                                                |
+class C {                                                                       |
+  x: C;                                                                         |
+}                                                                               |
+class E extends C {                                                             |
+  x: C;                                                                         |
+}                                                                               |
+                                                                                |
+module.exports = { C, E };                                                      |
+                                                                                |
+================================================================================
 `;

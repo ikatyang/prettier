@@ -1,24 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test.js - flow-verify 1`] = `
-declare class _C {
-  foo(): number;
-}
-declare var _module: {
-  C: Class<_C>;
-}
-declare class D extends _module.C {
-  foo(): string;
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class _C {
-  foo(): number;
-}
-declare var _module: {
-  C: Class<_C>
-};
-declare class D extends _module.C {
-  foo(): string;
-}
-
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class _C {                                                              |
+  foo(): number;                                                                |
+}                                                                               |
+declare var _module: {                                                          |
+  C: Class<_C>;                                                                 |
+}                                                                               |
+declare class D extends _module.C {                                             |
+  foo(): string;                                                                |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+declare class _C {                                                              |
+  foo(): number;                                                                |
+}                                                                               |
+declare var _module: {                                                          |
+  C: Class<_C>                                                                  |
+};                                                                              |
+declare class D extends _module.C {                                             |
+  foo(): string;                                                                |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

@@ -1,24 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`fields.graphql - graphql-verify 1`] = `
-{
-  posts {, title, votes, author {,   firstName,   posts {, author { firstName } }
-    }}
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-{
-  posts {
-    title
-    votes
-    author {
-      firstName
-      posts {
-        author {
-          firstName
-        }
-      }
-    }
-  }
-}
-
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{                                                                               |
+  posts {, title, votes, author {,   firstName,   posts {, author { firstName } |}
+    }}                                                                          |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+{                                                                               |
+  posts {                                                                       |
+    title                                                                       |
+    votes                                                                       |
+    author {                                                                    |
+      firstName                                                                 |
+      posts {                                                                   |
+        author {                                                                |
+          firstName                                                             |
+        }                                                                       |
+      }                                                                         |
+    }                                                                           |
+  }                                                                             |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

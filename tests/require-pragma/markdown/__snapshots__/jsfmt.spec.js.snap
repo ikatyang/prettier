@@ -1,106 +1,162 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`empty-front-matter-with-pragma.md - markdown-verify 1`] = `
----
----
-
-<!-- @prettier -->
-
-I     should      be      formatted       !!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
----
----
-
-<!-- @prettier -->
-
-I should be formatted !!
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+requirePragma: true
+                                                                                | printWidth
+=====================================input======================================
+---                                                                             |
+---                                                                             |
+                                                                                |
+<!-- @prettier -->                                                              |
+                                                                                |
+I     should      be      formatted       !!                                    |
+                                                                                |
+=====================================output=====================================
+---                                                                             |
+---                                                                             |
+                                                                                |
+<!-- @prettier -->                                                              |
+                                                                                |
+I should be formatted !!                                                        |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-front-matter-without-pragma.md - markdown-verify 1`] = `
----
----
-
-I     should      stay      as-is   !!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
----
----
-
-I     should      stay      as-is   !!
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+requirePragma: true
+                                                                                | printWidth
+=====================================input======================================
+---                                                                             |
+---                                                                             |
+                                                                                |
+I     should      stay      as-is   !!                                          |
+                                                                                |
+=====================================output=====================================
+---                                                                             |
+---                                                                             |
+                                                                                |
+I     should      stay      as-is   !!                                          |
+                                                                                |
+================================================================================
 `;
 
 exports[`front-matter-with-pragma.md - markdown-verify 1`] = `
----
-something
----
-
-<!-- @prettier -->
-
-I     should      be      formatted       !!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
----
-something
----
-
-<!-- @prettier -->
-
-I should be formatted !!
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+requirePragma: true
+                                                                                | printWidth
+=====================================input======================================
+---                                                                             |
+something                                                                       |
+---                                                                             |
+                                                                                |
+<!-- @prettier -->                                                              |
+                                                                                |
+I     should      be      formatted       !!                                    |
+                                                                                |
+=====================================output=====================================
+---                                                                             |
+something                                                                       |
+---                                                                             |
+                                                                                |
+<!-- @prettier -->                                                              |
+                                                                                |
+I should be formatted !!                                                        |
+                                                                                |
+================================================================================
 `;
 
 exports[`front-matter-without-pragma.md - markdown-verify 1`] = `
----
-something
----
-
-I     should      stay      as-is   !!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
----
-something
----
-
-I     should      stay      as-is   !!
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+requirePragma: true
+                                                                                | printWidth
+=====================================input======================================
+---                                                                             |
+something                                                                       |
+---                                                                             |
+                                                                                |
+I     should      stay      as-is   !!                                          |
+                                                                                |
+=====================================output=====================================
+---                                                                             |
+something                                                                       |
+---                                                                             |
+                                                                                |
+I     should      stay      as-is   !!                                          |
+                                                                                |
+================================================================================
 `;
 
 exports[`with-pragma.md - markdown-verify 1`] = `
-<!-- @prettier -->
-
-I     should      be      formatted       !!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<!-- @prettier -->
-
-I should be formatted !!
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+requirePragma: true
+                                                                                | printWidth
+=====================================input======================================
+<!-- @prettier -->                                                              |
+                                                                                |
+I     should      be      formatted       !!                                    |
+                                                                                |
+=====================================output=====================================
+<!-- @prettier -->                                                              |
+                                                                                |
+I should be formatted !!                                                        |
+                                                                                |
+================================================================================
 `;
 
 exports[`with-pragma-in-multiline.md - markdown-verify 1`] = `
-<!--
-  MIT LICENSE 
-  
-  bla bla bla
-
-  @format
--->
-
-I     should      be      formatted       !!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<!--
-  MIT LICENSE
-
-  bla bla bla
-
-  @format
--->
-
-I should be formatted !!
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+requirePragma: true
+                                                                                | printWidth
+=====================================input======================================
+<!--                                                                            |
+  MIT LICENSE                                                                   |
+                                                                                |
+  bla bla bla                                                                   |
+                                                                                |
+  @format                                                                       |
+-->                                                                             |
+                                                                                |
+I     should      be      formatted       !!                                    |
+                                                                                |
+=====================================output=====================================
+<!--                                                                            |
+  MIT LICENSE                                                                   |
+                                                                                |
+  bla bla bla                                                                   |
+                                                                                |
+  @format                                                                       |
+-->                                                                             |
+                                                                                |
+I should be formatted !!                                                        |
+                                                                                |
+================================================================================
 `;
 
 exports[`without-pragma.md - markdown-verify 1`] = `
-I     should      stay      as-is   !!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-I     should      stay      as-is   !!
-
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+requirePragma: true
+                                                                                | printWidth
+=====================================input======================================
+I     should      stay      as-is   !!                                          |
+                                                                                |
+=====================================output=====================================
+I     should      stay      as-is   !!                                          |
+                                                                                |
+================================================================================
 `;

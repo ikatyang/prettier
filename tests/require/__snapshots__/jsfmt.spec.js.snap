@@ -1,37 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`require.js - flow-verify 1`] = `
-const { one, two, thee, four, five, six, seven, eight, nine, ten } = require('./my-utils');
-const { one, two, thee, four, five, six, seven, eight, nine, ten, eleven } = require('./my-utils');
-
-const MyReallyExtrememlyLongModuleName = require('MyReallyExtrememlyLongModuleName');
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const {
-  one,
-  two,
-  thee,
-  four,
-  five,
-  six,
-  seven,
-  eight,
-  nine,
-  ten
-} = require("./my-utils");
-const {
-  one,
-  two,
-  thee,
-  four,
-  five,
-  six,
-  seven,
-  eight,
-  nine,
-  ten,
-  eleven
-} = require("./my-utils");
-
-const MyReallyExtrememlyLongModuleName = require("MyReallyExtrememlyLongModuleName");
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const { one, two, thee, four, five, six, seven, eight, nine, ten } = require('./|my-utils');
+const { one, two, thee, four, five, six, seven, eight, nine, ten, eleven } = req|uire('./my-utils');
+                                                                                |
+const MyReallyExtrememlyLongModuleName = require('MyReallyExtrememlyLongModuleNa|me');
+                                                                                |
+=====================================output=====================================
+const {                                                                         |
+  one,                                                                          |
+  two,                                                                          |
+  thee,                                                                         |
+  four,                                                                         |
+  five,                                                                         |
+  six,                                                                          |
+  seven,                                                                        |
+  eight,                                                                        |
+  nine,                                                                         |
+  ten                                                                           |
+} = require("./my-utils");                                                      |
+const {                                                                         |
+  one,                                                                          |
+  two,                                                                          |
+  thee,                                                                         |
+  four,                                                                         |
+  five,                                                                         |
+  six,                                                                          |
+  seven,                                                                        |
+  eight,                                                                        |
+  nine,                                                                         |
+  ten,                                                                          |
+  eleven                                                                        |
+} = require("./my-utils");                                                      |
+                                                                                |
+const MyReallyExtrememlyLongModuleName = require("MyReallyExtrememlyLongModuleNa|me");
+                                                                                |
+================================================================================
 `;

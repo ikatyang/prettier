@@ -1,21 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`custom-media-queries.css - css-verify 1`] = `
-@custom-media     --small-viewport ( max-width:30em   )
-
-
-;
-
-@media (      --small-viewport    ){
-.rule{color:blue;}
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@custom-media --small-viewport (max-width: 30em);
-
-@media (--small-viewport) {
-  .rule {
-    color: blue;
-  }
-}
-
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@custom-media     --small-viewport ( max-width:30em   )                         |
+                                                                                |
+                                                                                |
+;                                                                               |
+                                                                                |
+@media (      --small-viewport    ){                                            |
+.rule{color:blue;}                                                              |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+@custom-media --small-viewport (max-width: 30em);                               |
+                                                                                |
+@media (--small-viewport) {                                                     |
+  .rule {                                                                       |
+    color: blue;                                                                |
+  }                                                                             |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

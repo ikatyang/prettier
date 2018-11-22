@@ -1,24 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`empty.css - css-verify 1`] = `
-.ui-syntax-color();
-
-details[open] {
-}
-
-div {
-  box-sizing: border-box;;
-  color: red;
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.ui-syntax-color();
-
-details[open] {
-}
-
-div {
-  box-sizing: border-box;
-  color: red;
-}
-
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+.ui-syntax-color();                                                             |
+                                                                                |
+details[open] {                                                                 |
+}                                                                               |
+                                                                                |
+div {                                                                           |
+  box-sizing: border-box;;                                                      |
+  color: red;                                                                   |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+.ui-syntax-color();                                                             |
+                                                                                |
+details[open] {                                                                 |
+}                                                                               |
+                                                                                |
+div {                                                                           |
+  box-sizing: border-box;                                                       |
+  color: red;                                                                   |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

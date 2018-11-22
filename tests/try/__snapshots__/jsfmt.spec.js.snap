@@ -1,87 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`catch.js - flow-verify 1`] = `
-try {}
-catch(
-  // comment
-  foo
-) {}
-
-try {}
-catch(foo //comment
-) {}
-
-try {}
-catch(
-  /* comment */ foo
-) {}
-
-try {}
-catch(
-  foo /* comment */
-) {}
-
-try {}
-catch(
-  foo
-  /* comment */
-) {}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-try {
-} catch (
-  // comment
-  foo
-) {}
-
-try {
-} catch (
-  foo //comment
-) {}
-
-try {
-} catch (/* comment */ foo) {}
-
-try {
-} catch (foo /* comment */) {}
-
-try {
-} catch (
-  foo
-  /* comment */
-) {}
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+try {}                                                                          |
+catch(                                                                          |
+  // comment                                                                    |
+  foo                                                                           |
+) {}                                                                            |
+                                                                                |
+try {}                                                                          |
+catch(foo //comment                                                             |
+) {}                                                                            |
+                                                                                |
+try {}                                                                          |
+catch(                                                                          |
+  /* comment */ foo                                                             |
+) {}                                                                            |
+                                                                                |
+try {}                                                                          |
+catch(                                                                          |
+  foo /* comment */                                                             |
+) {}                                                                            |
+                                                                                |
+try {}                                                                          |
+catch(                                                                          |
+  foo                                                                           |
+  /* comment */                                                                 |
+) {}                                                                            |
+                                                                                |
+=====================================output=====================================
+try {                                                                           |
+} catch (                                                                       |
+  // comment                                                                    |
+  foo                                                                           |
+) {}                                                                            |
+                                                                                |
+try {                                                                           |
+} catch (                                                                       |
+  foo //comment                                                                 |
+) {}                                                                            |
+                                                                                |
+try {                                                                           |
+} catch (/* comment */ foo) {}                                                  |
+                                                                                |
+try {                                                                           |
+} catch (foo /* comment */) {}                                                  |
+                                                                                |
+try {                                                                           |
+} catch (                                                                       |
+  foo                                                                           |
+  /* comment */                                                                 |
+) {}                                                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty.js - flow-verify 1`] = `
-try {
-} catch (e) {
-}
-finally {
-}
-
-try {
-} catch (e) {
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-try {
-} catch (e) {
-} finally {
-}
-
-try {
-} catch (e) {}
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+try {                                                                           |
+} catch (e) {                                                                   |
+}                                                                               |
+finally {                                                                       |
+}                                                                               |
+                                                                                |
+try {                                                                           |
+} catch (e) {                                                                   |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+try {                                                                           |
+} catch (e) {                                                                   |
+} finally {                                                                     |
+}                                                                               |
+                                                                                |
+try {                                                                           |
+} catch (e) {}                                                                  |
+                                                                                |
+================================================================================
 `;
 
 exports[`try.js - flow-verify 1`] = `
-try
-/* missing comment */
-{;}
-finally {}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-try {
-  /* missing comment */
-} finally {
-}
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+try                                                                             |
+/* missing comment */                                                           |
+{;}                                                                             |
+finally {}                                                                      |
+                                                                                |
+=====================================output=====================================
+try {                                                                           |
+  /* missing comment */                                                         |
+} finally {                                                                     |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

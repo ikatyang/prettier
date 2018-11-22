@@ -1,327 +1,417 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`brackets.js - flow-verify 1`] = `
-import {
-  runTaskForChanged,
-  description,
-  someOtherLabel,
-  thatMakes,
-  itGo,
-  multiLine,
-  andMore,
-  soWeCanGetItTo80Columns
-} from '.';
-import {fitsIn, oneLine} from '.';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import {
-  runTaskForChanged,
-  description,
-  someOtherLabel,
-  thatMakes,
-  itGo,
-  multiLine,
-  andMore,
-  soWeCanGetItTo80Columns
-} from ".";
-import { fitsIn, oneLine } from ".";
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import {                                                                        |
+  runTaskForChanged,                                                            |
+  description,                                                                  |
+  someOtherLabel,                                                               |
+  thatMakes,                                                                    |
+  itGo,                                                                         |
+  multiLine,                                                                    |
+  andMore,                                                                      |
+  soWeCanGetItTo80Columns                                                       |
+} from '.';                                                                     |
+import {fitsIn, oneLine} from '.';                                              |
+                                                                                |
+=====================================output=====================================
+import {                                                                        |
+  runTaskForChanged,                                                            |
+  description,                                                                  |
+  someOtherLabel,                                                               |
+  thatMakes,                                                                    |
+  itGo,                                                                         |
+  multiLine,                                                                    |
+  andMore,                                                                      |
+  soWeCanGetItTo80Columns                                                       |
+} from ".";                                                                     |
+import { fitsIn, oneLine } from ".";                                            |
+                                                                                |
+================================================================================
 `;
 
 exports[`brackets.js - flow-verify 2`] = `
-import {
-  runTaskForChanged,
-  description,
-  someOtherLabel,
-  thatMakes,
-  itGo,
-  multiLine,
-  andMore,
-  soWeCanGetItTo80Columns
-} from '.';
-import {fitsIn, oneLine} from '.';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import {
-  runTaskForChanged,
-  description,
-  someOtherLabel,
-  thatMakes,
-  itGo,
-  multiLine,
-  andMore,
-  soWeCanGetItTo80Columns
-} from ".";
-import {fitsIn, oneLine} from ".";
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import {                                                                        |
+  runTaskForChanged,                                                            |
+  description,                                                                  |
+  someOtherLabel,                                                               |
+  thatMakes,                                                                    |
+  itGo,                                                                         |
+  multiLine,                                                                    |
+  andMore,                                                                      |
+  soWeCanGetItTo80Columns                                                       |
+} from '.';                                                                     |
+import {fitsIn, oneLine} from '.';                                              |
+                                                                                |
+=====================================output=====================================
+import {                                                                        |
+  runTaskForChanged,                                                            |
+  description,                                                                  |
+  someOtherLabel,                                                               |
+  thatMakes,                                                                    |
+  itGo,                                                                         |
+  multiLine,                                                                    |
+  andMore,                                                                      |
+  soWeCanGetItTo80Columns                                                       |
+} from ".";                                                                     |
+import {fitsIn, oneLine} from ".";                                              |
+                                                                                |
+================================================================================
 `;
 
 exports[`comments.js - flow-verify 1`] = `
-import { a //comment1
-//comment2
-//comment3
-as b} from "";
-
-import {
-  a as //comment1
-  //comment2
-  //comment3
-  b
-} from "";
-
-import {
-  a as //comment2 //comment1
-  //comment3
-  b
-} from "";
-
-import {
-  a as //comment3 //comment2 //comment1
-  b
-} from "";
-
-import {
-  // comment 1
-  FN1, // comment 2
-  /* comment 3 */ FN2,
-  // FN3,
-  FN4 /* comment 4 */
-  // FN4,
-  // FN5
-} from "./module";
-
-import {
-  ExecutionResult,
-  DocumentNode,
-  /* tslint:disable */
-  SelectionSetNode,
-  /* tslint:enable */
-} from 'graphql';
-
-import x, {
-  // comment
-  y
-} from 'z';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import {
-  //comment1
-  //comment2
-  //comment3
-  a as b
-} from "";
-
-import {
-  //comment1
-  //comment2
-  //comment3
-  a as b
-} from "";
-
-import {
-  //comment2 //comment1
-  //comment3
-  a as b
-} from "";
-
-import {
-  //comment3 //comment2 //comment1
-  a as b
-} from "";
-
-import {
-  // comment 1
-  FN1, // comment 2
-  /* comment 3 */ FN2,
-  // FN3,
-  FN4 /* comment 4 */
-  // FN4,
-  // FN5
-} from "./module";
-
-import {
-  ExecutionResult,
-  DocumentNode,
-  /* tslint:disable */
-  SelectionSetNode
-  /* tslint:enable */
-} from "graphql";
-
-import x, {
-  // comment
-  y
-} from "z";
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import { a //comment1                                                           |
+//comment2                                                                      |
+//comment3                                                                      |
+as b} from "";                                                                  |
+                                                                                |
+import {                                                                        |
+  a as //comment1                                                               |
+  //comment2                                                                    |
+  //comment3                                                                    |
+  b                                                                             |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  a as //comment2 //comment1                                                    |
+  //comment3                                                                    |
+  b                                                                             |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  a as //comment3 //comment2 //comment1                                         |
+  b                                                                             |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  // comment 1                                                                  |
+  FN1, // comment 2                                                             |
+  /* comment 3 */ FN2,                                                          |
+  // FN3,                                                                       |
+  FN4 /* comment 4 */                                                           |
+  // FN4,                                                                       |
+  // FN5                                                                        |
+} from "./module";                                                              |
+                                                                                |
+import {                                                                        |
+  ExecutionResult,                                                              |
+  DocumentNode,                                                                 |
+  /* tslint:disable */                                                          |
+  SelectionSetNode,                                                             |
+  /* tslint:enable */                                                           |
+} from 'graphql';                                                               |
+                                                                                |
+import x, {                                                                     |
+  // comment                                                                    |
+  y                                                                             |
+} from 'z';                                                                     |
+                                                                                |
+=====================================output=====================================
+import {                                                                        |
+  //comment1                                                                    |
+  //comment2                                                                    |
+  //comment3                                                                    |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  //comment1                                                                    |
+  //comment2                                                                    |
+  //comment3                                                                    |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  //comment2 //comment1                                                         |
+  //comment3                                                                    |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  //comment3 //comment2 //comment1                                              |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  // comment 1                                                                  |
+  FN1, // comment 2                                                             |
+  /* comment 3 */ FN2,                                                          |
+  // FN3,                                                                       |
+  FN4 /* comment 4 */                                                           |
+  // FN4,                                                                       |
+  // FN5                                                                        |
+} from "./module";                                                              |
+                                                                                |
+import {                                                                        |
+  ExecutionResult,                                                              |
+  DocumentNode,                                                                 |
+  /* tslint:disable */                                                          |
+  SelectionSetNode                                                              |
+  /* tslint:enable */                                                           |
+} from "graphql";                                                               |
+                                                                                |
+import x, {                                                                     |
+  // comment                                                                    |
+  y                                                                             |
+} from "z";                                                                     |
+                                                                                |
+================================================================================
 `;
 
 exports[`comments.js - flow-verify 2`] = `
-import { a //comment1
-//comment2
-//comment3
-as b} from "";
-
-import {
-  a as //comment1
-  //comment2
-  //comment3
-  b
-} from "";
-
-import {
-  a as //comment2 //comment1
-  //comment3
-  b
-} from "";
-
-import {
-  a as //comment3 //comment2 //comment1
-  b
-} from "";
-
-import {
-  // comment 1
-  FN1, // comment 2
-  /* comment 3 */ FN2,
-  // FN3,
-  FN4 /* comment 4 */
-  // FN4,
-  // FN5
-} from "./module";
-
-import {
-  ExecutionResult,
-  DocumentNode,
-  /* tslint:disable */
-  SelectionSetNode,
-  /* tslint:enable */
-} from 'graphql';
-
-import x, {
-  // comment
-  y
-} from 'z';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import {
-  //comment1
-  //comment2
-  //comment3
-  a as b
-} from "";
-
-import {
-  //comment1
-  //comment2
-  //comment3
-  a as b
-} from "";
-
-import {
-  //comment2 //comment1
-  //comment3
-  a as b
-} from "";
-
-import {
-  //comment3 //comment2 //comment1
-  a as b
-} from "";
-
-import {
-  // comment 1
-  FN1, // comment 2
-  /* comment 3 */ FN2,
-  // FN3,
-  FN4 /* comment 4 */
-  // FN4,
-  // FN5
-} from "./module";
-
-import {
-  ExecutionResult,
-  DocumentNode,
-  /* tslint:disable */
-  SelectionSetNode
-  /* tslint:enable */
-} from "graphql";
-
-import x, {
-  // comment
-  y
-} from "z";
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import { a //comment1                                                           |
+//comment2                                                                      |
+//comment3                                                                      |
+as b} from "";                                                                  |
+                                                                                |
+import {                                                                        |
+  a as //comment1                                                               |
+  //comment2                                                                    |
+  //comment3                                                                    |
+  b                                                                             |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  a as //comment2 //comment1                                                    |
+  //comment3                                                                    |
+  b                                                                             |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  a as //comment3 //comment2 //comment1                                         |
+  b                                                                             |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  // comment 1                                                                  |
+  FN1, // comment 2                                                             |
+  /* comment 3 */ FN2,                                                          |
+  // FN3,                                                                       |
+  FN4 /* comment 4 */                                                           |
+  // FN4,                                                                       |
+  // FN5                                                                        |
+} from "./module";                                                              |
+                                                                                |
+import {                                                                        |
+  ExecutionResult,                                                              |
+  DocumentNode,                                                                 |
+  /* tslint:disable */                                                          |
+  SelectionSetNode,                                                             |
+  /* tslint:enable */                                                           |
+} from 'graphql';                                                               |
+                                                                                |
+import x, {                                                                     |
+  // comment                                                                    |
+  y                                                                             |
+} from 'z';                                                                     |
+                                                                                |
+=====================================output=====================================
+import {                                                                        |
+  //comment1                                                                    |
+  //comment2                                                                    |
+  //comment3                                                                    |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  //comment1                                                                    |
+  //comment2                                                                    |
+  //comment3                                                                    |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  //comment2 //comment1                                                         |
+  //comment3                                                                    |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  //comment3 //comment2 //comment1                                              |
+  a as b                                                                        |
+} from "";                                                                      |
+                                                                                |
+import {                                                                        |
+  // comment 1                                                                  |
+  FN1, // comment 2                                                             |
+  /* comment 3 */ FN2,                                                          |
+  // FN3,                                                                       |
+  FN4 /* comment 4 */                                                           |
+  // FN4,                                                                       |
+  // FN5                                                                        |
+} from "./module";                                                              |
+                                                                                |
+import {                                                                        |
+  ExecutionResult,                                                              |
+  DocumentNode,                                                                 |
+  /* tslint:disable */                                                          |
+  SelectionSetNode                                                              |
+  /* tslint:enable */                                                           |
+} from "graphql";                                                               |
+                                                                                |
+import x, {                                                                     |
+  // comment                                                                    |
+  y                                                                             |
+} from "z";                                                                     |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-import.js - flow-verify 1`] = `
-import { } from '@types/googlemaps';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import {} from "@types/googlemaps";
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import { } from '@types/googlemaps';                                            |
+                                                                                |
+=====================================output=====================================
+import {} from "@types/googlemaps";                                             |
+                                                                                |
+================================================================================
 `;
 
 exports[`empty-import.js - flow-verify 2`] = `
-import { } from '@types/googlemaps';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import {} from "@types/googlemaps";
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import { } from '@types/googlemaps';                                            |
+                                                                                |
+=====================================output=====================================
+import {} from "@types/googlemaps";                                             |
+                                                                                |
+================================================================================
 `;
 
 exports[`inline.js - flow-verify 1`] = `
-import somethingSuperLongsomethingSuperLong from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-import {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-import a, {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-import {a, somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import somethingSuperLongsomethingSuperLong from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-import { somethingSuperLongsomethingSuperLong } from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-import a, {
-  somethingSuperLongsomethingSuperLong
-} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-import {
-  a,
-  somethingSuperLongsomethingSuperLong
-} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import somethingSuperLongsomethingSuperLong from 'somethingSuperLongsomethingSup|erLongsomethingSuperLong'
+import {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingS|uperLongsomethingSuperLong'
+import a, {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethi|ngSuperLongsomethingSuperLong'
+import {a, somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethi|ngSuperLongsomethingSuperLong'
+                                                                                |
+=====================================output=====================================
+import somethingSuperLongsomethingSuperLong from "somethingSuperLongsomethingSup|erLongsomethingSuperLong";
+import { somethingSuperLongsomethingSuperLong } from "somethingSuperLongsomethin|gSuperLongsomethingSuperLong";
+import a, {                                                                     |
+  somethingSuperLongsomethingSuperLong                                          |
+} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";                |
+import {                                                                        |
+  a,                                                                            |
+  somethingSuperLongsomethingSuperLong                                          |
+} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";                |
+                                                                                |
+================================================================================
 `;
 
 exports[`inline.js - flow-verify 2`] = `
-import somethingSuperLongsomethingSuperLong from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-import {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-import a, {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-import {a, somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import somethingSuperLongsomethingSuperLong from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-import {somethingSuperLongsomethingSuperLong} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-import a, {
-  somethingSuperLongsomethingSuperLong
-} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-import {
-  a,
-  somethingSuperLongsomethingSuperLong
-} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import somethingSuperLongsomethingSuperLong from 'somethingSuperLongsomethingSup|erLongsomethingSuperLong'
+import {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingS|uperLongsomethingSuperLong'
+import a, {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethi|ngSuperLongsomethingSuperLong'
+import {a, somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethi|ngSuperLongsomethingSuperLong'
+                                                                                |
+=====================================output=====================================
+import somethingSuperLongsomethingSuperLong from "somethingSuperLongsomethingSup|erLongsomethingSuperLong";
+import {somethingSuperLongsomethingSuperLong} from "somethingSuperLongsomethingS|uperLongsomethingSuperLong";
+import a, {                                                                     |
+  somethingSuperLongsomethingSuperLong                                          |
+} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";                |
+import {                                                                        |
+  a,                                                                            |
+  somethingSuperLongsomethingSuperLong                                          |
+} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";                |
+                                                                                |
+================================================================================
 `;
 
 exports[`long-line.js - flow-verify 1`] = `
-import someCoolUtilWithARatherLongName from '../../../../utils/someCoolUtilWithARatherLongName';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import someCoolUtilWithARatherLongName from "../../../../utils/someCoolUtilWithARatherLongName";
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import someCoolUtilWithARatherLongName from '../../../../utils/someCoolUtilWithA|RatherLongName';
+                                                                                |
+=====================================output=====================================
+import someCoolUtilWithARatherLongName from "../../../../utils/someCoolUtilWithA|RatherLongName";
+                                                                                |
+================================================================================
 `;
 
 exports[`long-line.js - flow-verify 2`] = `
-import someCoolUtilWithARatherLongName from '../../../../utils/someCoolUtilWithARatherLongName';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import someCoolUtilWithARatherLongName from "../../../../utils/someCoolUtilWithARatherLongName";
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import someCoolUtilWithARatherLongName from '../../../../utils/someCoolUtilWithA|RatherLongName';
+                                                                                |
+=====================================output=====================================
+import someCoolUtilWithARatherLongName from "../../../../utils/someCoolUtilWithA|RatherLongName";
+                                                                                |
+================================================================================
 `;
 
 exports[`multiple_standalones.js - flow-verify 1`] = `
-import a, * as b from 'a';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import a, * as b from "a";
-
+====================================options=====================================
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import a, * as b from 'a';                                                      |
+                                                                                |
+=====================================output=====================================
+import a, * as b from "a";                                                      |
+                                                                                |
+================================================================================
 `;
 
 exports[`multiple_standalones.js - flow-verify 2`] = `
-import a, * as b from 'a';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import a, * as b from "a";
-
+====================================options=====================================
+bracketSpacing: false
+parsers: ["flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import a, * as b from 'a';                                                      |
+                                                                                |
+=====================================output=====================================
+import a, * as b from "a";                                                      |
+                                                                                |
+================================================================================
 `;

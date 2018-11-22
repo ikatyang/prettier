@@ -1,20 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test.js - flow-verify 1`] = `
-/* @flow */
-
-class Foo {
-  annotationOnly: string;
-  initOnly = 'asdf';
-  initWithAnnotation: string = 'asdf';
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/* @flow */
-
-class Foo {
-  annotationOnly: string;
-  initOnly = "asdf";
-  initWithAnnotation: string = "asdf";
-}
-
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */                                                                     |
+                                                                                |
+class Foo {                                                                     |
+  annotationOnly: string;                                                       |
+  initOnly = 'asdf';                                                            |
+  initWithAnnotation: string = 'asdf';                                          |
+}                                                                               |
+                                                                                |
+=====================================output=====================================
+/* @flow */                                                                     |
+                                                                                |
+class Foo {                                                                     |
+  annotationOnly: string;                                                       |
+  initOnly = "asdf";                                                            |
+  initWithAnnotation: string = "asdf";                                          |
+}                                                                               |
+                                                                                |
+================================================================================
 `;

@@ -1,56 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`trailing-commas.js - flow-verify 1`] = `
-declare class C {
-  f(
-    superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
-    ...args
-  ): void,
-}
-
-function f(
-  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
-  ...args
-) {}
-
-declare class C { f(...superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong): void; }
-
-[superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,,];
-
-[veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong, ...a] = [];
-var {veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong, ...a} = {};
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-declare class C {
-  f(
-    superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
-    ...args
-  ): void;
-}
-
-function f(
-  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
-  ...args
-) {}
-
-declare class C {
-  f(
-    ...superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong
-  ): void;
-}
-
-[
-  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
-  ,
-];
-
-[
-  veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong,
-  ...a
-] = [];
-var {
-  veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong,
-  ...a
-} = {};
-
+====================================options=====================================
+parsers: ["flow", "babylon"]
+printWidth: 80
+trailingComma: "all"
+                                                                                | printWidth
+=====================================input======================================
+declare class C {                                                               |
+  f(                                                                            |
+    superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong, |
+    ...args                                                                     |
+  ): void,                                                                      |
+}                                                                               |
+                                                                                |
+function f(                                                                     |
+  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,   |
+  ...args                                                                       |
+) {}                                                                            |
+                                                                                |
+declare class C { f(...superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSu|perSuperSuperLong): void; }
+                                                                                |
+[superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong|,,];
+                                                                                |
+[veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong, .|..a] = [];
+var {veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLon|g, ...a} = {};
+                                                                                |
+                                                                                |
+=====================================output=====================================
+declare class C {                                                               |
+  f(                                                                            |
+    superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong, |
+    ...args                                                                     |
+  ): void;                                                                      |
+}                                                                               |
+                                                                                |
+function f(                                                                     |
+  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,   |
+  ...args                                                                       |
+) {}                                                                            |
+                                                                                |
+declare class C {                                                               |
+  f(                                                                            |
+    ...superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLon|g
+  ): void;                                                                      |
+}                                                                               |
+                                                                                |
+[                                                                               |
+  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLon|g,
+  ,                                                                             |
+];                                                                              |
+                                                                                |
+[                                                                               |
+  veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong, |
+  ...a                                                                          |
+] = [];                                                                         |
+var {                                                                           |
+  veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong, |
+  ...a                                                                          |
+} = {};                                                                         |
+                                                                                |
+================================================================================
 `;
