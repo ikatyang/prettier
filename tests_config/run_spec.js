@@ -34,8 +34,8 @@ function run_spec(dirname, parsers, options) {
       filename[0] !== "." &&
       filename !== "jsfmt.spec.js"
     ) {
-      let rangeStart = 0;
-      let rangeEnd = Infinity;
+      let rangeStart;
+      let rangeEnd;
       let cursorOffset;
       const source = read(path)
         .replace(/\r\n/g, "\n")
@@ -53,21 +53,29 @@ function run_spec(dirname, parsers, options) {
         return "";
       });
 
-      const mergedOptions = Object.assign(mergeDefaultOptions(options || {}), {
-        parser: parsers[0],
+      const baseOptions = Object.assign(mergeDefaultOptions(options || {}), {
         rangeStart,
         rangeEnd,
         cursorOffset
       });
-      const output = prettyprint(input, path, mergedOptions);
-      test(`${filename} - ${mergedOptions.parser}-verify`, () => {
+      const mainOptions = Object.assign({}, baseOptions, {
+        parser: parsers[0]
+      });
+      const output = prettyprint(input, path, mainOptions);
+      test(`${filename} - ${mainOptions.parser}-verify`, () => {
         expect(
-          raw(source + "~".repeat(mergedOptions.printWidth) + "\n" + output)
+          raw(
+            createSnapshot({
+              input: source,
+              output,
+              options: Object.assign({}, baseOptions, { parsers })
+            })
+          )
         ).toMatchSnapshot();
       });
 
       parsers.slice(1).forEach(parser => {
-        const verifyOptions = Object.assign({}, mergedOptions, { parser });
+        const verifyOptions = Object.assign({}, mainOptions, { parser });
         test(`${filename} - ${parser}-verify`, () => {
           const verifyOutput = prettyprint(input, path, verifyOptions);
           expect(output).toEqual(verifyOutput);
@@ -76,7 +84,7 @@ function run_spec(dirname, parsers, options) {
 
       if (AST_COMPARE) {
         test(`${path} parse`, () => {
-          const compareOptions = Object.assign({}, mergedOptions);
+          const compareOptions = Object.assign({}, mainOptions);
           delete compareOptions.cursorOffset;
           const astMassaged = parse(input, compareOptions);
           let ppastMassaged = undefined;
@@ -144,4 +152,78 @@ function mergeDefaultOptions(parserConfig) {
     },
     parserConfig
   );
+}
+
+function createSnapshot({ input, output, options }) {
+  const printWidth = options.printWidth;
+  const titleWidth = 80;
+
+  const shouldPrintRuler =
+    printWidth !== Infinity &&
+    options.rangeStart === undefined &&
+    options.rangeEnd === undefined &&
+    options.cursorOffset === undefined;
+
+  return []
+    .concat(
+      printSeparator(titleWidth, "options"),
+      printOptions(
+        omit(
+          options,
+          (k, v) =>
+            v === undefined ||
+            k === "rangeStart" ||
+            k === "rangeEnd" ||
+            k === "cursorOffset"
+        )
+      ),
+      shouldPrintRuler ? " ".repeat(printWidth) + "| printWidth" : [],
+      printSeparator(titleWidth, "input"),
+      printText(input, shouldPrintRuler && printWidth),
+      printSeparator(titleWidth, "output"),
+      printText(output, shouldPrintRuler && printWidth),
+      printSeparator(titleWidth)
+    )
+    .join("\n");
+}
+
+function printSeparator(width, description = "") {
+  const leftLength = Math.floor((width - description.length) / 2);
+  const rightLength = width - leftLength - description.length;
+  return "=".repeat(leftLength) + description + "=".repeat(rightLength);
+}
+
+function printOptions(options) {
+  const keys = Object.keys(options).sort();
+  return keys.map(key => `${key}: ${stringify(options[key])}`).join("\n");
+  function stringify(value) {
+    return value === Infinity
+      ? "Infinity"
+      : Array.isArray(value)
+      ? `[${value.map(v => JSON.stringify(v)).join(", ")}]`
+      : JSON.stringify(value);
+  }
+}
+
+function printText(text, rulerOffset) {
+  return !rulerOffset
+    ? text
+    : text
+        .split("\n")
+        .map(x =>
+          rulerOffset < x.length
+            ? x.slice(0, rulerOffset) + "|" + x.slice(rulerOffset)
+            : x + " ".repeat(rulerOffset - x.length) + "|"
+        )
+        .join("\n");
+}
+
+function omit(obj, fn) {
+  return Object.keys(obj).reduce((reduced, key) => {
+    const value = obj[key];
+    if (!fn(key, value)) {
+      reduced[key] = value;
+    }
+    return reduced;
+  }, {});
 }
