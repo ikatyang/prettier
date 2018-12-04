@@ -1,6 +1,6 @@
 steps:
-  - template: steps/install-nodejs.yml
-  - template: steps/install-dependencies.yml
-  - template: steps/download-dist.yml
+  - template: ../steps/install-nodejs.yml
+  - template: ../steps/install-dependencies.yml
+  - template: ../steps/download-dist.yml
   - script: yarn lint-dist
     displayName: "Lint dist"
