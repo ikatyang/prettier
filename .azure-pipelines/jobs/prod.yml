@@ -1,6 +1,8 @@
 steps:
   - template: ../steps/install-nodejs.yml
   - template: ../steps/install-dependencies.yml
+    parameters:
+      flags: --ignore-engines # prettier@dev requires node v6+
   - template: ../steps/download-dist.yml
   - script: yarn test:dist
     displayName: "Run tests on dist"
