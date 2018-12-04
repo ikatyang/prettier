@@ -2,5 +2,5 @@ steps:
   - task: DownloadPipelineArtifact@0
     inputs:
       artifactName: "dist"
-    targetPath: dist
+      targetPath: dist
     displayName: "Download dist"
