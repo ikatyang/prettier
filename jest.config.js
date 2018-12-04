@@ -32,6 +32,7 @@ module.exports = {
     "<rootDir>/src/doc/doc-debug.js",
     "<rootDir>/src/main/massage-ast.js"
   ],
+  coverageReporters: ["text", "html", "cobertura"],
   moduleNameMapper: {
     // Jest wires `fs` to `graceful-fs`, which causes a memory leak when
     // `graceful-fs` does `require('fs')`.

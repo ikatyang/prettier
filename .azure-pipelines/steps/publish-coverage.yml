@@ -1,0 +1,8 @@
+steps:
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: Cobertura
+      reportDirectory: coverage
+      summaryFileLocation: coverage/cobertura-coverage.xml
+    displayName: "Publish coverage"
+    condition: and(not(variables.NO_COVERAGE), succeededOrFailed())

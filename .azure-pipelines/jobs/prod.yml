@@ -7,3 +7,4 @@ steps:
   - script: yarn test:dist
     displayName: "Run tests on dist"
   - template: ../steps/publish-test-results.yml
+  - template: ../steps/publish-coverage.yml
