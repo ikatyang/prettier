@@ -2,7 +2,7 @@ steps:
   - task: PublishCodeCoverageResults@1
     inputs:
       codeCoverageTool: Cobertura
-      reportDirectory: coverage
-      summaryFileLocation: coverage/cobertura-coverage.xml
+      reportDirectory: $(System.DefaultWorkingDirectory)/coverage
+      summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml
     displayName: "Publish coverage"
     condition: and(not(variables.NO_COVERAGE), succeededOrFailed())
