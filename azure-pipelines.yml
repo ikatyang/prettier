@@ -78,6 +78,7 @@ jobs:
       matrix:
         Node_v4:
           node_version: 4
+          NO_COVERAGE: true
         Node_v10:
           node_version: 10
         Node_v10_standalone:

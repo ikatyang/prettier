@@ -1,6 +1,6 @@
 "use strict";
 
-const ENABLE_COVERAGE = !!process.env.CI;
+const ENABLE_COVERAGE = !!process.env.CI && !process.env.NO_COVERAGE;
 const ENABLE_SUMMARIES = !!process.env.CI;
 
 const requiresPrettierInternals = [
