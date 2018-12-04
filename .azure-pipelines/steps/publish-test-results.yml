@@ -1,0 +1,7 @@
+steps:
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: "junit.xml"
+    displayName: "Publish test results"
+    # jest-junit requires node v6+
+    condition: and(gt(variables.node_version, 6), succeededOrFailed())

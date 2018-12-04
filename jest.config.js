@@ -1,6 +1,7 @@
 "use strict";
 
 const ENABLE_COVERAGE = !!process.env.CI;
+const ENABLE_SUMMARIES = !!process.env.CI;
 
 const requiresPrettierInternals = [
   "tests_integration/__tests__/util-shared.js",
@@ -47,15 +48,9 @@ module.exports = {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
   ],
-  reporters: process.env.REPORT_SUMMARIES
-    ? [
-        "default",
-        [
-          "jest-junit",
-          {
-            output: "./test-results/jest/junit.xml"
-          }
-        ]
-      ]
-    : undefined
+  reporters: ["default"].concat(
+    ENABLE_SUMMARIES && !isOldNode // jest-junit requires node v6+
+      ? "jest-junit"
+      : []
+  )
 };
