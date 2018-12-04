@@ -4,4 +4,4 @@ steps:
       testResultsFiles: "junit.xml"
     displayName: "Publish test results"
     # jest-junit requires node v6+
-    condition: and(gt(variables.node_version, 6), succeededOrFailed())
+    condition: and(le(6, variables.node_version), succeededOrFailed())
