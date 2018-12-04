@@ -4,6 +4,7 @@ trigger:
   - chore/azure-pipelines
 
 variables:
+  CI: true
   AST_COMPARE: true
 
 jobs:
