@@ -15,7 +15,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/lint.yml
-    condition: eq(Build.DefinitionName, "Lint")
+    condition: eq(variables["Build.DefinitionName"], "Lint")
 
   - job: Dev_Test_Windows_Node_v10
     displayName: Dev Tests on Windows Node v10
@@ -25,7 +25,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/dev.yml
-    condition: eq(Build.DefinitionName, "Windows")
+    condition: eq(variables["Build.DefinitionName"], "Windows")
 
   - job: Dev_Test_macOS_Node_v10
     displayName: Dev Tests on macOS Node v10
@@ -35,7 +35,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/dev.yml
-    condition: eq(Build.DefinitionName, "macOS")
+    condition: eq(variables["Build.DefinitionName"], "macOS")
 
   - job: Dev_Test_Linux_Node_v10
     displayName: Dev Tests on Linux Node v10
@@ -45,7 +45,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/dev.yml
-    condition: eq(Build.DefinitionName, "Linux")
+    condition: eq(variables["Build.DefinitionName"], "Linux")
 
   - job: Build_Dist_Linux_Node_v10
     displayName: Build Dist on Linux Node v10
@@ -55,7 +55,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/build.yml
-    condition: eq(Build.DefinitionName, "Production")
+    condition: eq(variables["Build.DefinitionName"], "Production")
 
   - job: Lint_Dist_Linux_Node_v10
     dependsOn: Build_Dist_Linux_Node_v10
@@ -66,7 +66,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/lint-dist.yml
-    condition: eq(Build.DefinitionName, "Production")
+    condition: eq(variables["Build.DefinitionName"], "Production")
 
   - job: Prod_Test_Linux
     dependsOn: Build_Dist_Linux_Node_v10
@@ -84,4 +84,4 @@ jobs:
           TEST_STANDALONE: true
     steps:
       - template: .azure-pipelines/prod.yml
-    condition: eq(Build.DefinitionName, "Production")
+    condition: eq(variables["Build.DefinitionName"], "Production")
