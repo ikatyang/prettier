@@ -6,5 +6,5 @@ steps:
       summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml
     displayName: "Publish coverage"
     condition: and(not(variables.NO_COVERAGE), succeededOrFailed())
-  - script: yarn codecov
+  - script: yarn codecov -t $(CODECOV_TOKEN)
     displayName: "Publish coverage to Codecov"
