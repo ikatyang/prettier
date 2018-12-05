@@ -8,4 +8,3 @@ steps:
     condition: and(not(variables.NO_COVERAGE), succeededOrFailed())
   - script: yarn codecov
     displayName: "Publish coverage to Codecov"
-    condition: variables.CODECOV_TOKEN
