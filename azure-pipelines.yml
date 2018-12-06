@@ -6,7 +6,7 @@ trigger:
 variables:
   AST_COMPARE: true
   ENABLE_TEST_RESULTS: true
-  ENABLE_CODE_COVERAGE: true
+  ENABLE_CODE_COVERAGE: "" # only enable coverage on the fastest job
 
 jobs:
   - job: Dev_Lint
@@ -35,6 +35,7 @@ jobs:
       vmImage: macos-10.13
     variables:
       node_version: 10
+      ENABLE_CODE_COVERAGE: true
     steps:
       - template: .azure-pipelines/jobs/dev-test.yml
     condition: eq(variables['Build.DefinitionName'], 'macOS')
@@ -80,7 +81,6 @@ jobs:
         Node_v4:
           node_version: 4
           ENABLE_TEST_RESULTS: "" # jest-junit requires node v6+
-          ENABLE_CODE_COVERAGE: "" # collecting coverage is too slow on node v4
         Node_v10:
           node_version: 10
         Node_v10_standalone:
