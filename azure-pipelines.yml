@@ -17,6 +17,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/dev-lint.yml
+    condition: eq(variables['Build.DefinitionName'], 'Lint')
 
   - job: Dev_Test_Windows
     displayName: Dev Test on Windows Node v10
@@ -26,6 +27,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/dev-test.yml
+    condition: eq(variables['Build.DefinitionName'], 'Windows')
 
   - job: Dev_Test_macOS
     displayName: Dev Test on macOS Node v10
@@ -35,6 +37,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/dev-test.yml
+    condition: eq(variables['Build.DefinitionName'], 'macOS')
 
   - job: Dev_Test_Linux
     displayName: Dev Test on Linux Node v10
@@ -44,6 +47,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/dev-test.yml
+    condition: eq(variables['Build.DefinitionName'], 'Linux')
 
   - job: Prod_Build_Linux
     displayName: Prod Build on Linux Node v10
@@ -53,6 +57,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/prod-build.yml
+    condition: eq(variables['Build.DefinitionName'], 'Production')
 
   - job: Prod_Lint_Linux
     dependsOn: Prod_Build_Linux
@@ -63,6 +68,7 @@ jobs:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/prod-lint.yml
+    condition: eq(variables['Build.DefinitionName'], 'Production')
 
   - job: Prod_Test_Linux
     dependsOn: Prod_Build_Linux
@@ -82,3 +88,4 @@ jobs:
           TEST_STANDALONE: true
     steps:
       - template: .azure-pipelines/jobs/prod-test.yml
+    condition: eq(variables['Build.DefinitionName'], 'Production')
