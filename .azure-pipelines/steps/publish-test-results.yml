@@ -3,4 +3,4 @@ steps:
     inputs:
       testResultsFiles: "junit.xml"
     displayName: "Publish test results"
-    condition: and(not(variables.NO_SUMMARY), succeededOrFailed())
+    condition: and(variables.ENABLE_TEST_RESULTS, succeededOrFailed())

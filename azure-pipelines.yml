@@ -4,87 +4,81 @@ trigger:
   - chore/azure-pipelines
 
 variables:
-  CI: true
   AST_COMPARE: true
+  ENABLE_TEST_RESULTS: true
+  ENABLE_CODE_COVERAGE: true
 
 jobs:
-  - job: Lint_Linux_Node_v10
-    displayName: Lint on Linux Node v10
+  - job: Dev_Lint
+    displayName: Dev Lint on Linux Node v10
     pool:
       vmImage: "Ubuntu 16.04"
     variables:
       node_version: 10
     steps:
-      - template: .azure-pipelines/jobs/lint.yml
-    condition: eq(variables['Build.DefinitionName'], 'Lint')
+      - template: .azure-pipelines/jobs/dev-lint.yml
 
-  - job: Dev_Test_Windows_Node_v10
-    displayName: Dev Tests on Windows Node v10
+  - job: Dev_Test_Windows
+    displayName: Dev Test on Windows Node v10
     pool:
       vmImage: vs2017-win2016
     variables:
       node_version: 10
     steps:
-      - template: .azure-pipelines/jobs/dev.yml
-    condition: eq(variables['Build.DefinitionName'], 'Windows')
+      - template: .azure-pipelines/jobs/dev-test.yml
 
-  - job: Dev_Test_macOS_Node_v10
-    displayName: Dev Tests on macOS Node v10
+  - job: Dev_Test_macOS
+    displayName: Dev Test on macOS Node v10
     pool:
       vmImage: macos-10.13
     variables:
       node_version: 10
     steps:
-      - template: .azure-pipelines/jobs/dev.yml
-    condition: eq(variables['Build.DefinitionName'], 'macOS')
+      - template: .azure-pipelines/jobs/dev-test.yml
 
-  - job: Dev_Test_Linux_Node_v10
-    displayName: Dev Tests on Linux Node v10
+  - job: Dev_Test_Linux
+    displayName: Dev Test on Linux Node v10
     pool:
       vmImage: "Ubuntu 16.04"
     variables:
       node_version: 10
     steps:
-      - template: .azure-pipelines/jobs/dev.yml
-    condition: eq(variables['Build.DefinitionName'], 'Linux')
+      - template: .azure-pipelines/jobs/dev-test.yml
 
-  - job: Build_Dist_Linux_Node_v10
-    displayName: Build Dist on Linux Node v10
+  - job: Prod_Build_Linux
+    displayName: Prod Build on Linux Node v10
     pool:
       vmImage: "Ubuntu 16.04"
     variables:
       node_version: 10
     steps:
-      - template: .azure-pipelines/jobs/build.yml
-    condition: eq(variables['Build.DefinitionName'], 'Production')
+      - template: .azure-pipelines/jobs/prod-build.yml
 
-  - job: Lint_Dist_Linux_Node_v10
-    dependsOn: Build_Dist_Linux_Node_v10
-    displayName: Lint Dist on Linux Node v10
+  - job: Prod_Lint_Linux
+    dependsOn: Prod_Build_Linux
+    displayName: Prod Lint on Linux Node v10
     pool:
       vmImage: "Ubuntu 16.04"
     variables:
       node_version: 10
     steps:
-      - template: .azure-pipelines/jobs/lint-dist.yml
-    condition: eq(variables['Build.DefinitionName'], 'Production')
+      - template: .azure-pipelines/jobs/prod-lint.yml
 
   - job: Prod_Test_Linux
-    dependsOn: Build_Dist_Linux_Node_v10
-    displayName: Prod Tests on Linux
+    dependsOn: Prod_Build_Linux
+    displayName: Prod Test on Linux
     pool:
       vmImage: "Ubuntu 16.04"
     strategy:
       matrix:
         Node_v4:
           node_version: 4
-          NO_SUMMARY: true
-          NO_COVERAGE: true
+          ENABLE_TEST_RESULTS: "" # jest-junit requires node v6+
+          ENABLE_CODE_COVERAGE: "" # collecting coverage is too slow on node v4
         Node_v10:
           node_version: 10
         Node_v10_standalone:
           node_version: 10
           TEST_STANDALONE: true
     steps:
-      - template: .azure-pipelines/jobs/prod.yml
-    condition: eq(variables['Build.DefinitionName'], 'Production')
+      - template: .azure-pipelines/jobs/prod-test.yml

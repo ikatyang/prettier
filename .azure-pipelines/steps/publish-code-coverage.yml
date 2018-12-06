@@ -5,7 +5,7 @@ steps:
       reportDirectory: $(System.DefaultWorkingDirectory)/coverage
       summaryFileLocation: $(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml
     displayName: "Publish coverage"
-    condition: and(not(variables.NO_COVERAGE), succeededOrFailed())
+    condition: and(variables.ENABLE_CODE_COVERAGE, succeededOrFailed())
   - script: yarn codecov -f coverage/cobertura-coverage.xml -t $(CODECOV_TOKEN)
     displayName: "Publish coverage to Codecov"
-    condition: variables.CODECOV_TOKEN
+    condition: and(variables.ENABLE_CODE_COVERAGE, succeededOrFailed(), variables.CODECOV_TOKEN)

@@ -1,7 +1,7 @@
 "use strict";
 
-const ENABLE_COVERAGE = !!process.env.CI && !process.env.NO_COVERAGE;
-const ENABLE_SUMMARY = !!process.env.CI && !process.env.NO_SUMMARY;
+const ENABLE_TEST_RESULTS = !!process.env.ENABLE_TEST_RESULTS;
+const ENABLE_CODE_COVERAGE = !!process.env.ENABLE_CODE_COVERAGE;
 
 const requiresPrettierInternals = [
   "tests_integration/__tests__/util-shared.js",
@@ -25,7 +25,7 @@ module.exports = {
         ? ["tests_integration/__tests__/eol-crlf.js"]
         : ["tests_integration/__tests__/eol-lf.js"]
     ),
-  collectCoverage: ENABLE_COVERAGE,
+  collectCoverage: ENABLE_CODE_COVERAGE,
   collectCoverageFrom: ["src/**/*.js", "index.js", "!<rootDir>/node_modules/"],
   coveragePathIgnorePatterns: [
     "<rootDir>/standalone.js",
@@ -49,5 +49,5 @@ module.exports = {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
   ],
-  reporters: ["default"].concat(ENABLE_SUMMARY ? "jest-junit" : [])
+  reporters: ["default"].concat(ENABLE_TEST_RESULTS ? "jest-junit" : [])
 };
