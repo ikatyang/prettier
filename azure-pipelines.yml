@@ -50,32 +50,32 @@ jobs:
       - template: .azure-pipelines/jobs/dev-test.yml
     condition: eq(variables['Build.DefinitionName'], 'Linux')
 
-  - job: Prod_Build_Linux
-    displayName: Prod Build on Linux Node v10
+  - job: Prod_Build
+    displayName: Prod Build on macOS Node v10
     pool:
-      vmImage: "Ubuntu 16.04"
+      vmImage: macos-10.13
     variables:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/prod-build.yml
     condition: eq(variables['Build.DefinitionName'], 'Production')
 
-  - job: Prod_Lint_Linux
-    dependsOn: Prod_Build_Linux
-    displayName: Prod Lint on Linux Node v10
+  - job: Prod_Lint
+    dependsOn: Prod_Build
+    displayName: Prod Lint on macOS Node v10
     pool:
-      vmImage: "Ubuntu 16.04"
+      vmImage: macos-10.13
     variables:
       node_version: 10
     steps:
       - template: .azure-pipelines/jobs/prod-lint.yml
     condition: eq(variables['Build.DefinitionName'], 'Production')
 
-  - job: Prod_Test_Linux
-    dependsOn: Prod_Build_Linux
-    displayName: Prod Test on Linux
+  - job: Prod_Test
+    dependsOn: Prod_Build
+    displayName: Prod Test on macOS
     pool:
-      vmImage: "Ubuntu 16.04"
+      vmImage: macos-10.13
     strategy:
       matrix:
         Node_v4:
