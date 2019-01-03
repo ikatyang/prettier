@@ -5,7 +5,7 @@ const estreeJsonPrinter = require("./printer-estree-json");
 const options = require("./options");
 const createLanguage = require("../utils/create-language");
 
-const languages = [
+const languages = [].concat(
   createLanguage(require("linguist-languages/data/javascript"), {
     override: {
       since: "0.0.0",
@@ -53,26 +53,47 @@ const languages = [
       filenames: ["package.json", "package-lock.json", "composer.json"]
     }
   }),
-  createLanguage(require("linguist-languages/data/json"), {
-    override: {
-      since: "1.5.0",
-      parsers: ["json"],
-      vscodeLanguageIds: ["json"]
-    },
-    extend: {
-      filenames: [
-        ".prettierrc",
-        ".eslintrc" // trailing commas are not allowed
-      ]
-    }
-  }),
-  createLanguage(require("linguist-languages/data/json-with-comments"), {
-    override: {
-      since: "1.5.0",
-      parsers: ["jsonc"],
-      vscodeLanguageIds: ["jsonc"]
-    }
-  }),
+  ((linguistJsonData, linguistJsoncData) => {
+    /**
+     * Our `jsonc` refers to `JSON with Comments`, which is the format used by
+     * VSCode `settings.json` and TypeScript `tsconfig.json`, it extends JSON to
+     * allow comments and trailing commas.
+     *
+     * The `jsonc` in Linguist refers to JSON + comments, we cannot safely
+     * use it for our `jsonc` since it may introduce invalid trailing commas, so
+     * we hardcode filenames of our `jsonc` here.
+     */
+    const JSONC_FILENAMES = ["tsconfig.json"];
+    return [
+      createLanguage(linguistJsonData, {
+        override: {
+          since: "1.5.0",
+          parsers: ["json"],
+          vscodeLanguageIds: ["json"]
+        },
+        extend: {
+          extensions: linguistJsoncData.extensions,
+          filenames: [".prettierrc", ".eslintrc"].concat(
+            linguistJsoncData.filenames.filter(
+              filename => JSONC_FILENAMES.indexOf(filename) === -1
+            )
+          )
+        }
+      }),
+      createLanguage(linguistJsoncData, {
+        override: {
+          since: "1.5.0",
+          parsers: ["jsonc"],
+          vscodeLanguageIds: ["jsonc"],
+          filenames: JSONC_FILENAMES,
+          extensions: []
+        }
+      })
+    ];
+  })(
+    require("linguist-languages/data/json"),
+    require("linguist-languages/data/json-with-comments")
+  ),
   createLanguage(require("linguist-languages/data/json5"), {
     override: {
       since: "1.13.0",
@@ -80,7 +101,7 @@ const languages = [
       vscodeLanguageIds: ["json5"]
     }
   })
-];
+);
 
 const printers = {
   estree: estreePrinter,

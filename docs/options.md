@@ -188,8 +188,8 @@ Valid options:
 - `"scss"` (same parsers as `"css"`, prefers postcss-scss) _First available in v1.7.1_
 - `"less"` (same parsers as `"css"`, prefers postcss-less) _First available in v1.7.1_
 - `"json"` (via [@babel/parser parseExpression](https://babeljs.io/docs/en/next/babel-parser.html#babelparserparseexpressioncode-options)) _First available in v1.5.0_
-- `"jsonc"` (same parser as `"json"`, but [trailing commas are allowed](https://github.com/Microsoft/node-jsonc-parser/blob/v1.0.2/src/main.ts#L816)) _First available in v1.16.0_
-- `"json5"` (same parser as `"json"`, but outputs as [json5](https://json5.org/)) _First available in v1.13.0_
+- `"jsonc"` (same parser as `"json"`, but trailing commas are allowed) _First available in v1.16.0_
+- `"json5"` (same parser as `"json"`, but outputs as [JSON5](https://json5.org/)) _First available in v1.13.0_
 - `"json-stringify"` (same parser as `"json"`, but outputs like `JSON.stringify`) _First available in v1.13.0_
 - `"graphql"` (via [graphql/language](https://github.com/graphql/graphql-js/tree/master/src/language)) _First available in v1.5.0_
 - `"markdown"` (via [remark-parse](https://github.com/wooorm/remark/tree/master/packages/remark-parse)) _First available in v1.8.0_
