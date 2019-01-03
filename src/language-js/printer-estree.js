@@ -3669,11 +3669,9 @@ function printPropertyKey(path, options, print) {
   const node = path.getNode();
   const key = node.key;
 
-  if (
-    key.type === "Identifier" &&
-    !node.computed &&
-    options.parser === "json"
-  ) {
+  const forceQuotes = options.parser === "json" || options.parser === "jsonc";
+
+  if (key.type === "Identifier" && !node.computed && forceQuotes) {
     // a -> "a"
     return path.call(
       keyPath =>
@@ -3690,7 +3688,7 @@ function printPropertyKey(path, options, print) {
     isStringLiteral(key) &&
     isIdentifierName(key.value) &&
     !node.computed &&
-    options.parser !== "json" &&
+    !forceQuotes &&
     !(options.parser === "typescript" && node.type === "ClassProperty")
   ) {
     // 'a' -> a
@@ -5755,7 +5753,9 @@ function printAssignmentRight(leftNode, rightNode, printedRight, options) {
       (isStringLiteral(rightNode) || isMemberExpressionChain(rightNode)) &&
       // do not put values on a separate line from the key in json
       options.parser !== "json" &&
-      options.parser !== "json5");
+      options.parser !== "jsonc" &&
+      options.parser !== "json5" &&
+      options.parser !== "json-stringify");
 
   if (canBreak) {
     return group(indent(concat([line, printedRight])));

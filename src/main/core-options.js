@@ -143,6 +143,7 @@ const options = {
       { value: "less", since: "1.7.1", description: "Less" },
       { value: "scss", since: "1.7.1", description: "SCSS" },
       { value: "json", since: "1.5.0", description: "JSON" },
+      { value: "jsonc", since: "1.16.0", description: "JSON with Comments" },
       { value: "json5", since: "1.13.0", description: "JSON5" },
       {
         value: "json-stringify",

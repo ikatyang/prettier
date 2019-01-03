@@ -60,17 +60,17 @@ const languages = [
       vscodeLanguageIds: ["json"]
     },
     extend: {
-      filenames: [".prettierrc"]
+      filenames: [
+        ".prettierrc",
+        ".eslintrc" // trailing commas are not allowed
+      ]
     }
   }),
   createLanguage(require("linguist-languages/data/json-with-comments"), {
     override: {
       since: "1.5.0",
-      parsers: ["json"],
+      parsers: ["jsonc"],
       vscodeLanguageIds: ["jsonc"]
-    },
-    extend: {
-      filenames: [".eslintrc"]
     }
   }),
   createLanguage(require("linguist-languages/data/json5"), {

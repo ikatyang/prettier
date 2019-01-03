@@ -242,7 +242,7 @@ exports[`API getSupportInfo() with version 1.4.0 -> 1.5.0 1`] = `
 +       \\"json\\",
 +     ],
 +     \\"JSON with Comments\\": Array [
-+       \\"json\\",
++       \\"jsonc\\",
 +     ],
       \\"JSX\\": Array [
         \\"babel\\",
@@ -435,7 +435,7 @@ exports[`API getSupportInfo() with version 1.8.2 -> undefined 1`] = `
         \\"json\\",
       ],
       \\"JSON with Comments\\": Array [
-        \\"json\\",
+        \\"jsonc\\",
       ],
 +     \\"JSON.stringify\\": Array [
 +       \\"json-stringify\\",
@@ -489,7 +489,7 @@ exports[`API getSupportInfo() with version 1.8.2 -> undefined 1`] = `
         \\"type\\": \\"boolean\\",
       },
       \\"cursorOffset\\": Object {
-@@ -52,37 +81,76 @@
+@@ -52,37 +81,77 @@
           \\"start\\": -1,
           \\"step\\": 1,
         },
@@ -541,6 +541,7 @@ exports[`API getSupportInfo() with version 1.8.2 -> undefined 1`] = `
           \\"less\\",
           \\"scss\\",
           \\"json\\",
++         \\"jsonc\\",
 +         \\"json5\\",
 +         \\"json-stringify\\",
           \\"graphql\\",
@@ -568,7 +569,7 @@ exports[`API getSupportInfo() with version 1.8.2 -> undefined 1`] = `
         \\"range\\": Object {
           \\"end\\": Infinity,
           \\"start\\": 0,
-@@ -90,14 +158,15 @@
+@@ -90,14 +159,15 @@
         },
         \\"type\\": \\"int\\",
       },
@@ -718,7 +719,8 @@ exports[`CLI --support-info (stdout) 1`] = `
         \\".tern-project\\",
         \\"composer.lock\\",
         \\"mcmod.info\\",
-        \\".prettierrc\\"
+        \\".prettierrc\\",
+        \\".eslintrc\\"
       ],
       \\"group\\": \\"JavaScript\\",
       \\"linguistLanguageId\\": 174,
@@ -756,13 +758,12 @@ exports[`CLI --support-info (stdout) 1`] = `
         \\".jscsrc\\",
         \\".jshintrc\\",
         \\".jslintrc\\",
-        \\"tsconfig.json\\",
-        \\".eslintrc\\"
+        \\"tsconfig.json\\"
       ],
       \\"group\\": \\"JSON\\",
       \\"linguistLanguageId\\": 423,
       \\"name\\": \\"JSON with Comments\\",
-      \\"parsers\\": [\\"json\\"],
+      \\"parsers\\": [\\"jsonc\\"],
       \\"since\\": \\"1.5.0\\",
       \\"tmScope\\": \\"source.js\\",
       \\"type\\": \\"data\\",
@@ -1097,6 +1098,11 @@ exports[`CLI --support-info (stdout) 1`] = `
         { \\"description\\": \\"Less\\", \\"since\\": \\"1.7.1\\", \\"value\\": \\"less\\" },
         { \\"description\\": \\"SCSS\\", \\"since\\": \\"1.7.1\\", \\"value\\": \\"scss\\" },
         { \\"description\\": \\"JSON\\", \\"since\\": \\"1.5.0\\", \\"value\\": \\"json\\" },
+        {
+          \\"description\\": \\"JSON with Comments\\",
+          \\"since\\": \\"1.16.0\\",
+          \\"value\\": \\"jsonc\\"
+        },
         { \\"description\\": \\"JSON5\\", \\"since\\": \\"1.13.0\\", \\"value\\": \\"json5\\" },
         {
           \\"description\\": \\"JSON.stringify\\",

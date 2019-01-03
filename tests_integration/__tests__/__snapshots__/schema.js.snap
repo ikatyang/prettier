@@ -171,6 +171,12 @@ This option cannot be used with --range-start and --range-end.",
               ],
             },
             Object {
+              "description": "JSON with Comments",
+              "enum": Array [
+                "jsonc",
+              ],
+            },
+            Object {
               "description": "JSON5",
               "enum": Array [
                 "json5",

@@ -190,6 +190,7 @@ module.exports = {
         return true;
       }
     }),
+    jsonc: babelExpression,
     json5: babelExpression,
     "json-stringify": Object.assign(
       {

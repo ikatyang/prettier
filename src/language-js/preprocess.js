@@ -3,6 +3,7 @@
 function preprocess(ast, options) {
   switch (options.parser) {
     case "json":
+    case "jsonc":
     case "json5":
     case "json-stringify":
     case "__js_expression":

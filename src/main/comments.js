@@ -182,6 +182,7 @@ function attach(comments, ast, text, options) {
   comments.forEach((comment, i) => {
     if (
       options.parser === "json" ||
+      options.parser === "jsonc" ||
       options.parser === "json5" ||
       options.parser === "__js_expression" ||
       options.parser === "__vue_expression"

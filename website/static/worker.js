@@ -30,6 +30,10 @@ var parsers = {
     importScriptOnce("lib/parser-babylon.js");
     return prettierPlugins.babylon.parsers.json;
   },
+  get jsonc() {
+    importScriptOnce("lib/parser-babylon.js");
+    return prettierPlugins.babylon.parsers.jsonc;
+  },
   get json5() {
     importScriptOnce("lib/parser-babylon.js");
     return prettierPlugins.babylon.parsers.json5;
